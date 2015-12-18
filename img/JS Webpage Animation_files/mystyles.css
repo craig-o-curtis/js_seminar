@@ -1,0 +1,50 @@
+/* my styles */
+
+html, body, .jumbotron {
+	min-height: 100%;
+	height: 100%;
+}
+/* key is making the html height 100% */
+section.jumbotron {
+	background-size: cover;
+	height: 100%;
+	background-attachment: fixed;
+}
+
+.bg-darkblue {
+	background: #213451;
+}
+
+/* lighter blue #213451
+/* darker blue #1c2e49
+*/
+
+.text-blue,
+.text-blue:active  {
+	color: #1c2e49;
+}
+
+.text-blue:hover, 
+.text-blue:focus {
+	color: #f0ad4e;
+}
+
+.card-darkblue {
+	background: #213451;
+	border-color: #1c2e49;
+}
+
+/******* flex styles ********/
+/** should mimic the col-xx-xx grid **/
+/** centered "cards" **/
+/** needs media queries **/
+/** rename as flex-sm-6 **/
+
+.flex-container {
+	display: flex;
+	display: -webkit-flex;
+
+}
+
+
+

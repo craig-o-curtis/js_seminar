@@ -1,0 +1,1589 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="img/cdxl_favicon.ico">
+
+    <title>JS Webpage Animation</title>
+    <!-- font awesome fonts -->
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/jquery-ui.css" rel="stylesheet">
+    <link href="css/jquery-ui.theme.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="css/album.css" rel="stylesheet">
+    <link href="css/mystyles.css" rel="stylesheet">
+    <link href="css/flexbox.css" rel="stylesheet">
+    <link href="css/demos.css" rel="stylesheet">
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="js/ie10-viewport-bug-workaround.js"></script>
+  </head>
+
+  <body id="page_top">
+
+    <nav class="navbar-collapse navbar-dark bg-darkblue collapse inverse" id="navbar-header">
+      <div class="container-fluid">
+        <div class="about text-muted">
+          <h4>About</h4>
+          <p class="text-unstyled">This page is to both document coding samples for CoderDojoXL Shanghai and also be an addition to my coding portfolio.</p>
+        </div>
+        <div class="social text-warning">
+          <h4>Contact</h4>
+          <ul class="list-unstyled">
+            <li><a href="http://cn.linkedin.com/in/craigocurtis">Follow on LinkedIn</a></li>
+            <li><a href="http://www.meetup.com/CoderDojoXL-Shanghai">Like on Meetup</a></li>
+            <li><a href="mailto:craigocurtis@yahoo.com">Email me</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="navbar navbar-inverse navbar-static-top">
+      <div class="container-fluid">
+        <button id="bar_menu" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-header">
+          &#9776;
+        </button>
+        <a class="navbar-brand text-blue" type="button" data-toggle="collapse" data-target="#navbar-header">Info</a>
+      </div>
+    </div>
+
+    <!-- jumbotron -->
+    <section class="jumbotron text-center">
+      <div class="container-fluid">
+        <h1 class="jumbotron-heading display-2 text-warning">Interactivity with JavaScript</h1>
+        <p class="lead text-muted">This is a gallery of lessons from Khan Academy's HTML/JS Making Webpages Interactive course.</p>
+        <p>
+          <button type="button" id="main_button" class="btn btn-warning-outline" data-toggle="collapse" data-target="#lesson_choices" aria-expanded="false" aria-controls="Lesson Collapse Button">Get Started</button>
+
+          <button type="button" id="reset_button" class="btn btn-secondary" data-target="#page_top">Reset</button>
+        </p>
+        <progress id="progbar" class="progress progress-warning" value="0" max="100">0%</progress>
+        <!-- alert experiment -->
+        <div class="alert alert-warning alert-dismissible fade" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            <span class="sr-only">Close</span>
+          </button>
+          <strong></strong> Close this alert and continue studying!
+        </div>
+
+      </div>
+    </section>
+  
+    <section id="lesson_choices" class="album collapse text-muted">
+      <!-- flex experiment -->
+      <div class="flex-container flex-center"> <!-- flex parent -->
+
+        <!-- flex item 1; mimics card class, no width -->
+        <div class="lesson-card flex-card"> 
+          <!-- image modal -->
+          <img id="lesson1_image" class="card-img-top flex-card-image" alt="the DOM or Document Object Model" src="img/the_DOM.png">
+          <!-- image modal -->
+          <div class="card-block">
+            <h4 id="lesson1_title" class="card-title">JS and the DOM</h4>
+            <p class="card-text">Learn how to control the DOM or Document Object Model with JavaScript.</p>
+            <!-- closes #lesson_choices and opens first lesson-->
+            <button type="button" id="lesson1_button" class="btn btn-blue-outline lesson_button" data-toggle="collapse" data-target="#lesson1" aria-expanded="false" aria-controls="Lesson Collapse Button">Start Lesson 1</button>
+            <!-- star ratings -->
+            <div class="star_container">
+              <i id="l1_star1" class="fa fa-star-o"></i>
+              <i id="l1_star2" class="fa fa-star-o"></i>
+              <i id="l1_star3" class="fa fa-star-o"></i>
+            </div>
+
+          </div>
+        </div> <!-- end of flex-card -->
+
+        <!-- flex item 2; mimics card class, no width -->
+        <div class="lesson-card flex-card"> 
+          <img id="lesson2_image" class="card-img-top flex-card-image" alt="the DOM or Document Object Model" src="img/DOM_access.png">
+          <div class="card-block">
+            <h4 id="lesson2_title" class="card-title">DOM access methods</h4>
+            <p class="card-text">Learn the DOM API in JavaScript to access your webpages.s</p>
+            <button type="button" id="lesson2_button" class="btn btn-blue-outline lesson_button" data-toggle="collapse" data-target="#lesson2" aria-expanded="false" aria-controls="Lesson Collapse Button">Start Lesson 2</button>
+            <!-- star ratings -->
+            <div class="star_container">
+              <i id="l2_star1" class="fa fa-star-o"></i>
+              <i id="l2_star2" class="fa fa-star-o"></i>
+              <i id="l2_star3" class="fa fa-star-o"></i>
+            </div>
+          </div>
+        </div> <!-- end of flex-card -->
+
+        <!-- flex item 3; mimics card class, no width -->
+        <div class="lesson-card flex-card"> 
+          <img id="lesson3_image" class="card-img-top flex-card-image" alt="the DOM or Document Object Model" src="img/DOM_modification.png">
+          <div class="card-block">
+            <h4 id="lesson3_title" class="card-title">DOM modification</h4>
+            <p class="card-text">Learn to use JavaScript to modify styles and attributes, and create new elements.</p>
+            <button type="button" id="lesson3_button" class="btn btn-blue-outline lesson_button" data-toggle="collapse" data-target="#lesson3" aria-expanded="false" aria-controls="Lesson Collapse Button">Start Lesson 3</button>
+            <!-- star ratings -->
+            <div class="star_container">
+              <i id="l3_star1" class="fa fa-star-o"></i>
+              <i id="l3_star2" class="fa fa-star-o"></i>
+              <i id="l3_star3" class="fa fa-star-o"></i>
+            </div>
+          </div>
+        </div> <!-- end of flex-card -->
+      </div> <!-- ******** end of flex-container1 ******** -->
+
+      <div class="flex-container flex-center">
+        <!-- flex item 4; mimics card class, no width -->
+        <div class="lesson-card flex-card"> 
+          <img id="lesson4_image" class="card-img-top flex-card-image" alt="the DOM or Document Object Model" src="img/DOM_events.png">
+          <div class="card-block">
+            <h4 id="lesson4_title" class="card-title">DOM events</h4>
+            <p class="card-text">Use the DOM API to make your page react to events like clicks, scrolls, and data entered in fields.</p>
+            <button type="button" id="lesson4_button" class="btn btn-blue-outline lesson_button" data-toggle="collapse" data-target="#lesson4" aria-expanded="false" aria-controls="Lesson Collapse Button">Start Lesson 4</button>
+            <!-- star ratings -->
+            <div class="star_container">
+              <i id="l4_star1" class="fa fa-star-o"></i>
+              <i id="l4_star2" class="fa fa-star-o"></i>
+              <i id="l4_star3" class="fa fa-star-o"></i>
+            </div>
+          </div>
+        </div> <!-- end of flex-card -->
+
+        <!-- flex item 5; mimics card class, no width -->
+        <div class="lesson-card flex-card"> 
+          <img id="lesson5_image" class="card-img-top flex-card-image" alt="the DOM or Document Object Model" src="img/DOM_modification.png">
+          <div class="card-block">
+            <h4 id="lesson5_title" class="card-title">DOM animation</h4>
+            <p class="card-text">Animate parts of your webpage using window.setInterval, window.requestAnimationFrame, and CSS animations and transitions.</p>
+            <button type="button" id="lesson5_button" class="btn btn-blue-outline lesson_button" data-toggle="collapse" data-target="#lesson5" aria-expanded="false" aria-controls="Lesson Collapse Button">Start Lesson 5</button>
+            <!-- star ratings -->
+            <div class="star_container">
+              <i id="l5_star1" class="fa fa-star-o"></i>
+              <i id="l5_star2" class="fa fa-star-o"></i>
+              <i id="l5_star3" class="fa fa-star-o"></i>
+            </div>
+          </div>
+        </div> <!-- end of flex-card -->
+
+        <!-- flex item 6; mimics card class, no width -->
+        <div class="lesson-card flex-card"> 
+          <img id="lesson6_image" class="card-img-top flex-card-image" alt="the DOM or Document Object Model" src="img/DOM_modification.png">
+          <div class="card-block">
+            <h4 id="lesson6_title" class="card-title">JS libraries</h4>
+            <p class="card-text">Include JS libraries in your page to harness the power of the open source community.</p>
+            <button type="button" id="lesson6_button" class="btn btn-blue-outline lesson_button" data-toggle="collapse" data-target="#lesson6" aria-expanded="false" aria-controls="Lesson Collapse Button">Start Lesson 6</button>
+            <!-- star ratings -->
+            <div class="star_container">
+              <i id="l6_star1" class="fa fa-star-o"></i>
+              <i id="l6_star2" class="fa fa-star-o"></i>
+              <i id="l6_star3" class="fa fa-star-o"></i>
+            </div>
+          </div>
+        </div> <!-- end of flex-card -->
+      </div> <!-- ******** end of flex-container ******** -->
+    
+    
+      <!--******* individual lesson content *******-->
+      <div class="flex-container-column"> <!-- flex-container-column -->
+        <!-- lesson1 -->
+        <!-- lesson1_modal1 -->
+        <div id="lesson1_modal1" class="overlay">
+          <div class="lessonModal_box">
+            <div class="lessonModal_title">
+              <h3>Internal Scripts</h3>
+            </div>
+            <div class="lessonModal_content">
+              <!-- modal tabs -->
+              <div id="l1tab1" class="tabs">
+                <ul>
+                  <li><a href="#l1m1tabs-html">HTML</a></li>
+                </ul>
+                <div id="l1m1tabs-html">
+                  <code>
+                  &lt;!DOCTYPE html&gt;<br>
+                  &lt;html&gt;<br>
+                  &nbsp;&nbsp;&lt;head&gt;<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&lt;script type="text/javascript"&gt;<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var helloFunction = function(){<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert("Hello world");<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&lt;&#47;script&gt;<br>
+                  &nbsp;&nbsp;&lt;&#47;head&gt;<br>
+                  &nbsp;&nbsp;&lt;body&gt;<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&lt;button onclick="helloFunction()"&gt;Push Me!&lt;&#47;button&gt;<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&lt;button onclick="goodbyeFunction()"&gt;Don't Push Me!&lt;&#47;button&gt;<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&lt;script type="text/javascript"&gt;<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var goodbyeFunction = function(){<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert("Goodbye world");<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&lt;&#47;script&gt;<br>
+                  &nbsp;&nbsp;&lt;&#47;body&gt;<br>
+                  &lt;&#47;html&gt;<br>
+                  </code>
+                </div>
+              </div> <!-- l1tab2 -->
+              <button class="btn-close-blue close_modal" data-target="#lesson1">Close &nbsp;<i class="fa fa-times"></i></button>
+            </div> <!-- lessonModal_content -->
+          </div> <!-- lessonModal_box -->
+        </div> <!-- overlay lesson1_modal1 --> 
+
+        <!-- lesson1_modal2 -->
+        <div id="lesson1_modal2" class="overlay">
+          <div class="lessonModal_box">
+            <div class="lessonModal_title">
+              <h3>External Scripts</h3>
+            </div>
+            <div class="lessonModal_content">
+              <!-- modal tabs -->
+              <div id="l1tab2" class="tabs">
+                <ul>
+                  <li><a href="#l1m2tabs-html">HTML</a></li>
+                  <li><a href="#l1m2tabs-js">JS</a></li>
+                </ul>
+                <div id="l1m2tabs-html">
+                  <code>
+                  &lt;!DOCTYPE html&gt;<br>
+                  &lt;html&gt;<br>
+                  &nbsp;&nbsp;&lt;head&gt;<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&lt;script src="app.js"&gt;
+                  &lt;&#47;script&gt;<br>
+                  &nbsp;&nbsp;&lt;&#47;head&gt;<br>
+                  &nbsp;&nbsp;&lt;body&gt;<br>
+                  &nbsp;&nbsp;&lt;&#47;body&gt;<br>
+                  &lt;&#47;html&gt;<br>
+                  </code>
+                </div>
+                <div id="l1m2tabs-js">
+                  <code>
+                    /** app.js **/<br>
+                    var message = "Hello world!";<br>
+                    console.log(message);<br>
+                  </code>
+                </div>
+              </div> <!-- l1tab2 -->
+              <button class="btn-close-blue close_modal" data-target="#lesson1">Close &nbsp;<i class="fa fa-times"></i></button>
+            </div> <!-- lessonModal_content -->
+          </div> <!-- lessonModal_box -->
+        </div> <!-- overlay lesson1_modal2 --> 
+
+        <!-- lesson1_modal3 -->
+        <div id="lesson1_modal3" class="overlay">
+          <div class="lessonModal_box">
+            <div class="lessonModal_title">
+              <h3>External Scripts</h3>
+            </div>
+            <div class="lessonModal_content">
+              <!-- modal tabs -->
+              <div id="l1tab3" class="tabs">
+                <ul>
+                  <li><a href="#l1m3tabs-html">HTML</a></li>
+                  <li><a href="#l1m3tabs-js">JS</a></li>
+                </ul>
+                <div id="l1m3tabs-html">
+                  <code>
+                  &lt;!DOCTYPE html&gt;<br>
+                  &lt;html&gt;<br>
+                  &nbsp;&nbsp;&lt;head&gt;<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&lt;script src="app.js"&gt;
+                  &lt;&#47;script&gt;<br>
+                  &nbsp;&nbsp;&lt;&#47;head&gt;<br>
+                  &nbsp;&nbsp;&lt;body&gt;<br>
+                  &nbsp;&nbsp;&lt;&#47;body&gt;<br>
+                  &lt;&#47;html&gt;<br>
+                  </code>
+                </div>
+                <div id="l1m3tabs-js">
+                  <code>
+                    /** app.js **/<br>
+                    /**** This writes the message to the page ****/
+                    document.body.innerHTML = "Hello again!";
+                  </code>
+                </div>
+              </div> <!-- l1tab3 -->
+              <button class="btn-close-blue close_modal" data-target="#lesson1">Close &nbsp;<i class="fa fa-times"></i></button>
+            </div> <!-- lessonModal_content -->
+          </div> <!-- lessonModal_box -->
+        </div> <!-- overlay lesson1_modal3 -->
+
+        <!-- modal quiz -->
+        <div id="lesson1_modalQuiz" class="overlay">
+          <div class="lessonModal_box">
+            <div class="lessonModal_title">
+              <h3 class="lessonNumber">Lesson 1 Quiz</h3>
+            </div>
+            <div class="lessonModal_content">
+              <!-- modal tabs -->
+              <div id="l1tab4" class="tabs">
+                <ul>
+                  <li><a href="#l1_question1"><i class="fa fa-star-o"></i></a></li>
+                  <li><a href="#l1_question2"><i class="fa fa-star-o"></i></a></li>
+                  <li><a href="#l1_question3"><i class="fa fa-star-o"></i></a></li>
+                </ul>
+                <div id="l1_question1" class="question" data-get="#l1_star1">
+                  <h3>What does DOM stand for?</h3>
+                  <p class="answerChoice">Data Overlay Mode</p>
+                  <p class="answerChoice key">Document Object Model</p>
+                  <p class="answerChoice">Div Oriented Manipulation</p>
+                  <p class="answerChoice">Disk-on-a-model</p>
+                </div>
+                <div id="l1_question2" class="question" data-get="#l1_star2">
+                  <h3>What is the correct way to add an external script?</h3>
+                  <p class="answerChoice"><code>&lt;script src="app.js"&#47;&gt;</code></p>
+                  <p class="answerChoice"><code>&lt;script href="app.js"&gt;&lt;&#47;script&gt;</code></p>
+                  <p class="answerChoice key"><code>&lt;script src="app.js"&gt;&lt;&#47;script&gt;</code></p>
+                  <p class="answerChoice"><code>&lt;script href="app.js"&#47;&gt;</code></p>
+                </div>
+                <div id="l1_question3" class="question" data-get="#l1_star3">
+                  <h3>Which code snippet is correct?</h3>
+                  <p class="answerChoice"><code>document.innerHTML = "Hello world!";</code></p>
+                  <p class="answerChoice"><code>document.body.innerHTML("Hello world!");</code></p>
+                  <p class="answerChoice"><code>document.innerHTML("Hello world!");</code></p>
+                  <p class="answerChoice key"><code>document.body.innerHTML = "Hello world!";</code></p>
+                </div>
+              </div> <!-- l1tab4 -->
+              <!-- collect XP button here -->
+              <button class="btn btn-xp-blue xp_button close_modal" data-target="#page_top">Collect XP</button>
+              <button class="btn-close-blue close_modal" data-target="#lesson1">Close &nbsp;<i class="fa fa-times"></i></button>
+            </div> <!-- lessonModal_content -->
+          </div> <!-- lessonModal_box -->
+        </div> <!-- overlay lesson1_modal4 -->
+        <!-- modal -->
+
+        <!-- lesson1 content -->
+        <div id="lesson1" class="collapse flex-card card-inverse card-darkblue btn-w lesson"> <!-- lesson -->
+          <div class="flex-container flex-center"> <!-- sub flex-container -->
+            <div class="flex-card flex-left"> <!-- flex-card left -->
+              <h3 class="card-title card-title-main">JS and the DOM</h3>
+              <h4 class="card-title">Putting JS in a webpage</h4>
+              <p class="card-text">You can apply JavaScript in the inline, internally in the head or body tags, or in external script files.</p>
+              <h4 class="card-title">Simple Javascript Methods</h4>
+              <h5 class="card-title"><code>console.log("Message" + variable)</code></h5>
+              <p class="card-text">This is a great testing tool to check to see if your JavaScript is doing what you want it to be doing.</p>
+              <p class="card-text">You can press <strong class="text-warning">COMMAND + OPTION</strong> on a Mac or <strong class="text-warning">CONTROL + SHIFT</strong> on a Windows machine to view the console.</p>
+              <h5 class="card-title"><code>alert("Message" + variable);</code></h5>
+              <p class="card-text">Not a good final product for an app or website, this is also more of a testing tool for the developer.</p>
+              <p class="card-text">This is a dialog box that pops up with a <strong>OK</strong>.
+              <h5 class="card-title"><code>confirm("Message" + variable);</code></h5>
+              <p class="card-text">This is a dialog box that pops up with both <strong>OK</strong> and <strong>CANCEL</strong> buttons.
+              <h5 class="card-title"><code>prompt("Message" + variable);</code></h5>
+              <p class="card-text">Another relic of the 1990's, this is a dialog box that pops up allowing for user input.</p>
+              <h4 class="card-title">DOM manipulation</h4>
+              <p class="card-text">We can access the DOM or Document Object Model with the <code>document</code> keyword.</p>
+            </div> <!-- flex-card left -->
+            <div class="flex-card"> <!-- flex-card right -->
+              <div class="flex-container-column">
+                <h3 class="card-title card-title-main">&nbsp;</h3>
+                <h5 class="card-title">Example Code:</h5>
+                <button type="button" class="btn btn-warning-outline modal_button" data-get="#lesson1_modal1">Internal example</button>
+                <button type="button" class="btn btn-warning-outline modal_button" data-get="#lesson1_modal2">External example</button>
+                <button type="button" class="btn btn-warning-outline modal_button" data-get="#lesson1_modal3"><code>document</code> keyword</button>
+                <!-- quiz button -->
+                <button type="button" class="btn btn-warning modal_button quiz_button" data-get="#lesson1_modalQuiz">Quiz</button>
+              </div> <!-- sub sub flex container -->
+            </div> <!-- flex-card right -->
+          </div> <!-- sub flex-container -->
+        </div> <!-- lesson1 -->
+        
+        <!-- lesson2 -->
+        <!-- lesson2_modal1 -->
+        <div id="lesson2_modal1" class="overlay">
+          <div class="lessonModal_box">
+            <div class="lessonModal_title">
+              <h3><code>document</code> methods</h3>
+            </div>
+            <div class="lessonModal_content">
+              <!-- modal tabs -->
+              <div id="l2tab1" class="tabs">
+                <ul>
+                  <li><a href="#l2m1tabs-html">HTML</a></li>
+                  <li><a href="#l2m1tabs-js">JS</a></li>
+                </ul>
+                <div id="l2m1tabs-html">
+                  <code>
+                  &lt;!DOCTYPE html&gt;<br>
+                  &lt;html&gt;<br>
+                  &nbsp;&nbsp;&lt;head&gt;<br>
+                  &nbsp;&nbsp;&lt;&#47;head&gt;<br>
+                  &nbsp;&nbsp;&lt;body&gt;<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&lt;h1 id="heading"&gt;Original Heading&lt;&#47;h1&gt;<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&lt;section class="content"&gt;<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Paragraph One&lt;&#47;p&gt;<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Paragraph Two&lt;&#47;p&gt;<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&lt;&#47;section&gt;<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&lt;section class="content"&gt;<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Paragraph Three&lt;&#47;p&gt;<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Paragraph Four&lt;&#47;p&gt;<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&lt;&#47;section&gt;<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&lt;script type="text/javascript" src="app.js"&gt;&lt;&#47;script&gt;<br>
+                  &nbsp;&nbsp;&lt;&#47;body&gt;<br>
+                  &lt;&#47;html&gt;<br>
+                  </code>
+                </div>
+                <div id="l2m1tabs-js">
+                  <code>
+                  /* app.js */<br>
+                  var heading = document.getElementById('heading'); /* returns one node or element */<br>
+                  var content = document.getElementsByClass('content'); /* returns an array */<br>
+                  var paragraphs = document.getElementsByTagName('p'); /* returns an array */<br>
+                  heading.innerHTML = "Page Title";
+                  p.style('background', 'yellow');
+                  for (var i = 0; i < content.length; i++) {
+                    content[i].innerHTML = "Content populated via for loop";
+                  }
+                  </code>
+                </div>
+              </div> <!-- l2tab1 -->
+              <button class="btn-close-blue close_modal" data-target="#lesson2">Close &nbsp;<i class="fa fa-times"></i></button>
+            </div> <!-- lessonModal_content -->
+          </div> <!-- lessonModal_box -->
+        </div> <!-- overlay lesson2_modal1 --> 
+
+        <!-- lesson2_modal2 -->
+        <div id="lesson2_modal2" class="overlay">
+          <div class="lessonModal_box">
+            <div class="lessonModal_title">
+              <h3>Accessing by CSS Selector</h3>
+            </div>
+            <div class="lessonModal_content">
+              <!-- modal tabs -->
+              <div id="l2tab2" class="tabs">
+                <ul>
+                  <li><a href="#l2m2tabs-html">HTML</a></li>
+                  <li><a href="#l2m2tabs-css">CSS</a></li>
+                  <li><a href="#l2m2tabs-js">JS</a></li>
+                </ul>
+                <div id="l2m2tabs-html">
+                  <code>
+                  &lt;!DOCTYPE html&gt;<br>
+                  &lt;html&gt;<br>
+                  &nbsp;&nbsp;&lt;head&gt;<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&lt;link rel="stylesheet" href="styles.css"&gt;
+                  &lt;&#47;script&gt;<br>
+                  &nbsp;&nbsp;&lt;&#47;head&gt;<br>
+                  &nbsp;&nbsp;&lt;body&gt;<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&lt;section&gt;<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h1 id="topHeading"&gt;Heading&lt;&#47;h1&gt;<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p class="paragraph"&gt;Paragraph One&lt;&#47;p&gt;<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p class="paragraph"&gt;Paragraph Two&lt;&#47;p&gt;<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p class="paragraph"&gt;Paragraph Three&lt;&#47;p&gt;<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p class="paragraph"&gt;Paragraph Four&lt;&#47;p&gt;<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&lt;&#47;section&gt;<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&lt;script src="app.js"&gt;&lt;&#47;script&gt;<br>
+                  &nbsp;&nbsp;&lt;&#47;body&gt;<br>
+                  &lt;&#47;html&gt;<br>
+                  </code>
+                </div>
+                <div id="l2m2tabs-css">
+                  <code>
+                    /* styles.css */<br>
+                    #topHeading {<br>
+                    &nbsp;&nbsp;text-shadow: 1px 1px 1px lightgray;<br>
+                    }<br>
+                    section .paragraph {<br>
+                    &nbsp;&nbsp;font-family: Fantasy;<br>
+                    }<br>
+                  </code>
+                </div>
+                <div id="l2m2tabs-js">
+                  <code>
+                    /** app.js **/<br>
+                    var topHeading = document.querySelector('#topHeading');
+                    var paragraphs = document.querySelectorAll('section .paragraph');<br>
+                    var totalParagraphs = paragraphs.length;
+                    confirm("There are " + totalParagraphs + " on the page.");<br>
+                  </code>
+                </div>
+              </div> <!-- l2tab2 -->
+              <button class="btn-close-blue close_modal" data-target="#lesson2">Close &nbsp;<i class="fa fa-times"></i></button>
+            </div> <!-- lessonModal_content -->
+          </div> <!-- lessonModal_box -->
+        </div> <!-- overlay lesson2_modal2 --> 
+
+        <!-- lesson2_modal3 -->
+        <div id="lesson2_modal3" class="overlay">
+          <div class="lessonModal_box">
+            <div class="lessonModal_title">
+              <h3>Advanced CSS Selectors</h3>
+            </div>
+            <div class="lessonModal_content">
+              <!-- modal tabs -->
+              <div id="l2tab3" class="tabs">
+                <ul>
+                  <li><a href="#l2m3tabs-html">HTML</a></li>
+                  <li><a href="#l2m3tabs-css">CSS</a></li>
+                  <li><a href="#l2m3tabs-js">JS</a></li>
+                </ul>
+                <div id="l2m3tabs-html">
+                  <code>
+                  &lt;!DOCTYPE html&gt;<br>
+                  &lt;html&gt;<br>
+                  &nbsp;&nbsp;&lt;head&gt;<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&lt;link rel="stylesheet" href="styles.css"&gt;
+                  &lt;&#47;script&gt;<br>
+                  &nbsp;&nbsp;&lt;&#47;head&gt;<br>
+                  &nbsp;&nbsp;&lt;body&gt;<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&lt;section id="topSection"&gt;<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h1 id="topHeading onmouseover="changeBack();"&gt;Heading&lt;&#47;h1&gt;<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p class="paragraph"&gt;Paragraph One&lt;&#47;p&gt;<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p class="paragraph"&gt;Paragraph Two&lt;&#47;p&gt;<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p class="paragraph"&gt;Paragraph Three&lt;&#47;p&gt;<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p class="paragraph"&gt;Paragraph Four&lt;&#47;p&gt;<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p class="paragraph"&gt;Paragraph Five&lt;&#47;p&gt;<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p class="paragraph"&gt;Paragraph Sixe&lt;&#47;p&gt;<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p class="paragraph"&gt;Paragraph Seven&lt;&#47;p&gt;<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p class="paragraph"&gt;Paragraph Eight&lt;&#47;p&gt;<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&lt;&#47;section&gt;<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&lt;script src="app.js"&gt;&lt;&#47;script&gt;<br>
+                  &nbsp;&nbsp;&lt;&#47;body&gt;<br>
+                  &lt;&#47;html&gt;<br>
+                  </code>
+                </div>
+                <div id="l2m3tabs-css">
+                  <code>
+                    /* styles.css */<br>
+                    #topSection .paragraph:first-child {<br>
+                    &nbsp;&nbsp;font-weight: bold;<br>
+                    }<br>
+                    #topSection .paragraph:last-child {<br>
+                    &nbsp;&nbsp;font-weight: light;<br>
+                    }<br>
+                    #topSection .paragraph:nth-child(3) {<br>
+                    &nbsp;&nbsp;color: steelblue;<br>
+                    }<br>
+                    #topSection .paragraph:nth-child(3n + 2) {<br>
+                    &nbsp;&nbsp;text-decoration: underline;<br>
+                    }<br>
+                    #topSection .paragraph:nth-child(even) {<br>
+                    &nbsp;&nbsp;background-image: url('file://PATH-TO/img/darkblue_background.png');<br>
+                    }<br>
+                    #topSection .paragraph:nth-child(odd) {<br>
+                    &nbsp;&nbsp;font-family: sans-serif;<br>
+                    }<br>
+                  </code>
+                </div>
+                <div id="l2m3tabs-js">
+                  <code>
+                    /** app.js **/<br>
+                    var firstParagraph = document.querySelectorAll('#topSection .paragraph:first-child');<br><br>
+                    var lastParagraph = document.querySelectorAll('#topSection .paragraph:last-child');<br><br>
+                    var thirdParagraph = document.querySelectorAll('#topSection .paragraph:nth-child(3)');<br><br>
+                    var everyThirdStartingFromSecond = document.querySelectorAll('#topSection .paragraph:nth-child(3n + 2)');<br><br>
+                    var evenParagraphs = document.querySelectorAll('#topSection .paragraph:nth-child(even)');<br><br>
+                    var oddParagraphs = document.querySelectorAll('#topSection .paragraph:nth-child(odd)');<br><br>
+                    var changeBack = function(){<br>
+                    &nbsp;&nbsp;firstParagraph.style.font-weight = "initial";<br>
+                    &nbsp;&nbsp;lastParagraph.style.font-weight = "initial";<br>
+                    &nbsp;&nbsp;thirdParagraph.style.color = "initial";<br>
+                    &nbsp;&nbsp;everyThirdStartingFromSecond.style.text-decoration = "initial";<br>
+                    &nbsp;&nbsp;evenParagraphs.style.background-image = "none";<br>
+                    &nbsp;&nbsp;oddParagraphs.style.font-family = "initial";<br>
+                    }<br>
+                  </code>
+                </div>
+              </div> <!-- l2tab3 -->
+              <button class="btn-close-blue close_modal" data-target="#lesson2">Close &nbsp;<i class="fa fa-times"></i></button>
+            </div> <!-- lessonModal_content -->
+          </div> <!-- lessonModal_box -->
+        </div> <!-- overlay lesson2_modal3 -->
+
+        <!-- modal quiz -->
+        <div id="lesson2_modalQuiz" class="overlay">
+          <div class="lessonModal_box">
+            <div class="lessonModal_title">
+              <h3 class="lessonNumber">Lesson 2 Quiz</h3>
+            </div>
+            <div class="lessonModal_content">
+              <!-- modal tabs -->
+              <div id="l2tab4" class="tabs">
+                <ul>
+                  <li><a href="#l2_question1"><i class="fa fa-star-o"></i></a></li>
+                  <li><a href="#l2_question2"><i class="fa fa-star-o"></i></a></li>
+                  <li><a href="#l2_question3"><i class="fa fa-star-o"></i></a></li>
+                </ul>
+                <div id="l2_question1" class="question" data-get="#l2_star1">
+                  <h3>Which selection is INCORRECT?</h3>
+                  <p class="answerChoice">document.getElementById('id_name');</p>
+                  <p class="answerChoice">document.getElementsByClass('class_name');</p>
+                  <p class="answerChoice">document.getElementsByType('html_tag');</p>
+                  <p class="answerChoice key">document.querySelectorsAll('parent #id_name, parent .class_name');</p>
+                </div>
+                <div id="l2_question2" class="question" data-get="#l2_star2">
+                  <h3>You will need to use a <code>for</code> loop to access html values in ALL EXCEPT:</h3>
+                  <p class="answerChoice key">document.querySelector('#id_name')</p>
+                  <p class="answerChoice">document.getElementsByClass('class_name');</p>
+                  <p class="answerChoice">document.querySelectorAll('.team-member')</p>
+                  <p class="answerChoice">document.getElementsByTagName('tag_name'))</p>
+                </div>
+                <div id="l2_question3" class="question" data-get="#l2_star3">
+                  <h3>Using the <code>:nth-child</code> pseudo-selector, what does the <code>2</code> mean in <code>p:nth(3n + 2)</code> mean?</h3>
+                  <p class="answerChoice key">Starting from the 2nd item, every next 3rd item.</p>
+                  <p class="answerChoice">Starting from the 3rd item, every next 2nd item.</p>
+                  <p class="answerChoice">Items that are multiples of 5.</p>
+                  <p class="answerChoice">The 5th item.</p>
+                </div>
+              </div> <!-- l2tab4 -->
+              <!-- collect XP button here -->
+              <button class="btn btn-xp-blue xp_button close_modal" data-target="#page_top">Collect XP</button>
+              <button class="btn-close-blue close_modal" data-target="#lesson1">Close &nbsp;<i class="fa fa-times"></i></button>
+            </div> <!-- lessonModal_content -->
+          </div> <!-- lessonModal_box -->
+        </div> <!-- overlay lesson2_modal4 -->
+        <!-- modal 2 -->
+
+        <!-- lesson2 -->
+        <div id="lesson2" class="collapse flex-card card-inverse card-darkblue btn-w lesson"> <!-- lesson -->
+          <div class="flex-container flex-center"> <!-- sub flex-container -->
+            <div class="flex-card flex-left"> <!-- flex-card left -->
+              <h4 class="card-title">DOM access methods</h4>
+              <p class="card-text">We can continue using the <code>document</code> keyword to access DOM nodes.</p>
+              <ul>
+                <li><code>document.getElementById('id_name');</code></li>
+                <li><code>document.getElementsByClass('class_name');</code></li>
+                <li><code>document.getElementsByType('html_tag');</code></li>
+              </ul>
+              <h4 class="card-title">Accessing by CSS Selector</h4>
+              <p class="card-text">The <code>document</code> keyword can also access by CSS selectors and pseudo-selectors.</p>
+              <ul>
+                <li><code>document.querySelector('#id_name');</code></li>
+                <li><code>document.querySelectorAll('parent #id_name, parent .class_name');</code></li>
+                <li><code>document.querySelectorAll('#parent_id .class_name:first-child');</code></li>
+                <li><code>document.querySelectorAll('#parent_id .class_name:last-child');</code></li>
+                <li><code>document.querySelectorAll('#parent_id .class_name:nth-child(3)');</code></li>
+                <li><code>document.querySelectorAll('#parent_id .class_name:nth-child(3n + 2)');</code></li>
+                <li><code>document.querySelectorAll('#parent_id .class_name:nth-child(even)');</code></li>
+                <li><code>document.querySelectorAll('#parent_id .class_name:nth-child(odd)');</code></li>
+              </ul>
+            </div> <!-- flex-card left -->
+
+            <div class="flex-card"> <!-- flex-card right -->
+              <div class="flex-container-column">
+                <h3 class="card-title card-title-main">&nbsp;</h3>
+                <h5 class="card-title">Example Code:</h5>
+                <button type="button" class="btn btn-warning-outline modal_button" data-get="#lesson2_modal1"><code>document</code> methods</button>
+                <button type="button" class="btn btn-warning-outline modal_button" data-get="#lesson2_modal2">Accessing CSS Selectors</button>
+                <button type="button" class="btn btn-warning-outline modal_button" data-get="#lesson2_modal3">Advanced CSS Selectors</button>
+                <!-- quiz button -->
+                <button type="button" class="btn btn-warning modal_button quiz_button" data-get="#lesson2_modalQuiz">Quiz</button>
+              </div>
+            </div> <!-- flex-card right -->         
+          </div> <!-- sub flex-container -->
+        </div> <!-- lesson2 -->
+        <!-- lesson2 debug: lesson1 end -->
+
+        <!-- lesson 3 -->
+        <!-- lesson3_modal1 -->
+        <div id="lesson3_modal1" class="overlay">
+          <div class="lessonModal_box">
+            <div class="lessonModal_title">
+              <h3>Attribute Selectors</h3>
+            </div>
+            <div class="lessonModal_content">
+              <!-- modal tabs -->
+              <div id="l3tab1" class="tabs">
+                <ul>
+                  <li><a href="#l3m1tabs-html">HTML</a></li>
+                  <li><a href="#l3m1tabs-js">JS</a></li>
+                </ul>
+                <div id="l3m1tabs-html">
+                  <code>
+                  &lt;!DOCTYPE html&gt;<br>
+                  &lt;html&gt;<br>
+                  &nbsp;&nbsp;&lt;head&gt;<br>
+                  &nbsp;&nbsp;&lt;&#47;head&gt;<br>
+                  &nbsp;&nbsp;&lt;body&gt;<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&lt;h1 id="galleryHeading"&gt;&lt;&#47;h1&gt;<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&lt;img class="images"&#47;&gt;<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&lt;img class="images"&#47;&gt;<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&lt;img class="images"&#47;&gt;<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&lt;button&gt;&lt;&#47;button&gt;<br> 
+                  &nbsp;&nbsp;&nbsp;&nbsp;&lt;script type="text/javascript" src="app.js"&gt;&lt;&#47;script&gt;<br>
+                  &nbsp;&nbsp;&lt;&#47;body&gt;<br>
+                  &lt;&#47;html&gt;<br>
+                  </code>
+                </div>
+                <div id="l3m1tabs-js">
+                  <code>
+                    /** app.js **/<br>
+                    /*** assume that in the img folder, we have the following images:<br>
+                    &nbsp;&nbsp;background01.png<br>
+                    &nbsp;&nbsp;background02.png<br>
+                    &nbsp;&nbsp;background03.png<br>
+                    ***/<br>
+                    var galleryHeading = document.getElementById('galleryHeading');<br>
+                    galleryHeading.textContent = 'Image Gallery';<br>
+                    var images = document.getElementsByTagName('img');<br>
+                    for (var i = 0; i < images.length; i++){<br>
+                    &nbsp;&nbsp;images[i].src = "img/background0" + (i + 1) + ".png";<br>
+                    }<br>
+                    var closeButton = document.getElementById('closeButton');<br>
+                    closeButton.innerHTML = '&lt;strong&gt;Close&lt;&#47;strong&gt;';<br>
+                    }<br>
+                  </code>
+                </div>
+              </div> <!-- l3tab1 -->
+              <button class="btn-close-blue close_modal" data-target="#lesson3">Close &nbsp;<i class="fa fa-times"></i></button>
+            </div> <!-- lessonModal_content -->
+          </div> <!-- lessonModal_box -->
+        </div> <!-- overlay lesson3_modal1 --> 
+
+        <!-- lesson3_modal2 -->
+        <div id="lesson3_modal2" class="overlay">
+          <div class="lessonModal_box">
+            <div class="lessonModal_title">
+              <h3>Using <code>.style</code></h3>
+            </div>
+            <div class="lessonModal_content">
+              <!-- modal tabs -->
+              <div id="l3tab2" class="tabs">
+                <ul>
+                  <li><a href="#l3m2tabs-html">HTML</a></li>
+                  <li><a href="#l3m2tabs-js">JS</a></li>
+                </ul>
+                <div id="l3m2tabs-html">
+                  <code>
+                  &lt;!DOCTYPE html&gt;<br>
+                  &lt;html&gt;<br>
+                  &nbsp;&nbsp;&lt;head&gt;<br>
+                  &nbsp;&nbsp;&lt;&#47;head&gt;<br>
+                  &nbsp;&nbsp;&lt;body&gt;<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&lt;video&gt;&lt;&#47;video&gt;<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="file" accept="video/*"&#47&gt;<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&lt;script src="app.js"&gt;
+                  &lt;&#47;script&gt;<br>
+                  &nbsp;&nbsp;&lt;&#47;body&gt;<br>
+                  &lt;&#47;html&gt;<br>
+                  </code>
+                </div>
+                <div id="l3m2tabs-js">
+                  <code>
+                    /** app.js **/<br>
+                    var video = document.querySelector('video');<br>
+                    video.src = "https://www.youtube.com/embed/iR01DKCgaH8";<br>
+                    video.allowFullScreen = true;<br>
+                    video.style.width = '100%';<br>
+                    var input = document.querySelector('input');<br>
+                    input.disabled = true;<br>
+                    /* notice below we must convert hyphenated words to camelCase */<br>
+                    input.style.boxShadow = '1px 1px 4px 1px #3d1';<br>
+                    input.style.backgroundColor = 'fuchsia';<br>
+                  </code>
+                </div>
+              </div> <!-- l3tab2 -->
+              <button class="btn-close-blue close_modal" data-target="#lesson3">Close &nbsp;<i class="fa fa-times"></i></button>
+            </div> <!-- lessonModal_content -->
+          </div> <!-- lessonModal_box -->
+        </div> <!-- overlay lesson3_modal2 --> 
+
+        <!-- lesson3_modal3 -->
+        <div id="lesson3_modal3" class="overlay">
+          <div class="lessonModal_box">
+            <div class="lessonModal_title">
+              <h3>Tweaking Classes</h3>
+            </div>
+            <div class="lessonModal_content">
+              <!-- modal tabs -->
+              <div id="l3tab3" class="tabs">
+                <ul>
+                  <li><a href="#l3m3tabs-html">HTML</a></li>
+                  <li><a href="#l3m3tabs-css">CSS</a></li>
+                  <li><a href="#l3m3tabs-js">JS</a></li>
+                </ul>
+                <div id="l3m3tabs-html">
+                  <code>
+                  &lt;!DOCTYPE html&gt;<br>
+                  &lt;html&gt;<br>
+                  &nbsp;&nbsp;&lt;head&gt;<br>
+                  &nbsp;&nbsp;&lt;&#47;head&gt;<br>
+                  &nbsp;&nbsp;&lt;body&gt;<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="container"&gt;<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p class="content"&gt;This is the content.&lt;&#47;p&gt;<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&lt;&#47;div&gt;<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&lt;script src="app.js"&gt;
+                  &lt;&#47;script&gt;<br>
+                  &nbsp;&nbsp;&lt;&#47;body&gt;<br>
+                  &lt;&#47;html&gt;<br>
+                  </code>
+                </div>
+                <div id="l3m3tabs-css">
+                  <code>
+                    .changedDiv {<br>
+                    &nbsp;&nbsp;height: 100%;<br>
+                    &nbsp;&nbsp;width: 80%;<br>
+                    &nbsp;&nbsp;background: #8f3f31;<br>
+                    &nbsp;&nbsp;color: #13f3f8;<br>
+                    &nbsp;&nbsp;display: -webkit-flex;<br>
+                    &nbsp;&nbsp;box-shadow: 1px 1px 4px 1px #13f3f8;<br>
+                    }<br>
+                    .fancyFonts {<br>
+                    &nbsp;&nbsp;font-family: Fantasy, Cursive;<br>
+                    &nbsp;&nbsp;font-size: 1.5rem;<br>
+                    }<br>
+                  </code>
+                </div>  
+                <div id="l3m3tabs-js">  
+                  <code>
+                    /** app.js **/<br>
+                    /* .container.className = 'changeDiv'; is a bug because it replaces the old class name */<br>
+                    .container.className += 'changeDiv';<br>
+                    .container.classList.add('fancyFonts');<br>
+                  </code>
+                </div>
+              </div> <!-- l3tab3 -->
+              <button class="btn-close-blue close_modal" data-target="#lesson3">Close &nbsp;<i class="fa fa-times"></i></button>
+            </div> <!-- lessonModal_content -->
+          </div> <!-- lessonModal_box -->
+        </div> <!-- overlay lesson3_modal3 -->
+
+        <!-- lesson3_modal4 -->
+        <div id="lesson3_modal4" class="overlay">
+          <div class="lessonModal_box">
+            <div class="lessonModal_title">
+              <h3>Creating HTML Elements</h3>
+            </div>
+            <div class="lessonModal_content">
+              <!-- modal tabs -->
+              <div id="l3tab4" class="tabs">
+                <ul>
+                  <li><a href="#l3m4tabs-html">HTML</a></li>
+                  <li><a href="#l3m4tabs-js">JS</a></li>
+                </ul>
+                <div id="l3m4tabs-html">
+                  <code>
+                  &lt;!DOCTYPE html&gt;<br>
+                  &lt;html&gt;<br>
+                  &nbsp;&nbsp;&lt;head&gt;<br>
+                  &nbsp;&nbsp;&lt;&#47;head&gt;<br>
+                  &nbsp;&nbsp;&lt;body&gt;<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="container"&gt;<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&lt;&#47;div&gt;<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&lt;script src="app.js"&gt;&lt;&#47;script&gt;<br>
+                  &nbsp;&nbsp;&lt;&#47;body&gt;<br>
+                  &lt;&#47;html&gt;<br>
+                  </code>
+                </div>
+                <div id="l3m4tabs-js">  
+                  <code>
+                    /** app.js **/<br>
+                    /*** creates image with necessary attributes ***/<br>
+                    var createImg = document.createElement('img');<br>
+                    createImg.src = "img/background.jpg";<br>
+                    createImg.alt = "Cyber blue background";<br>
+                    var divContainer = document.getElementsByClass('container');<br>
+                    var createText = document.createTextNode('This is the image caption.');<br>
+                    /*** creates text ***/<br>
+                    var createParagraph = document.createElement('p');<br>
+                    createParagraph.appendChild(createText);<br>
+                    createImg.appendChild(createParagraph);<br>
+                    /*** appends text to image ***/
+                    for (){<br>
+                    &nbsp;&nbsp;divContainer.appendChild(createImg);<br>
+                    }<br>
+                  </code>
+                </div>
+              </div> <!-- l3tab4 -->
+              <button class="btn-close-blue close_modal" data-target="#lesson3">Close &nbsp;<i class="fa fa-times"></i></button>
+            </div> <!-- lessonModal_content -->
+          </div> <!-- lessonModal_box -->
+        </div> <!-- overlay lesson3_modal4 -->
+
+        <!-- modal quiz -->
+        <div id="lesson3_modalQuiz" class="overlay">
+          <div class="lessonModal_box">
+            <div class="lessonModal_title">
+              <h3 class="lessonNumber">Lesson 3 Quiz</h3>
+            </div>
+            <div class="lessonModal_content">
+              <!-- modal tabs -->
+              <div id="l3tab4" class="tabs">
+                <ul>
+                  <li><a href="#l3_question1"><i class="fa fa-star-o"></i></a></li>
+                  <li><a href="#l3_question2"><i class="fa fa-star-o"></i></a></li>
+                  <li><a href="#l3_question3"><i class="fa fa-star-o"></i></a></li>
+                </ul>
+                <div id="l3_question1" class="question" data-get="#l3_star1">
+                  <h3>What is a valid value to modify <code>element.disabled</code>?</h3>
+                  <p class="answerChoice"><code>1</code></p>
+                  <p class="answerChoice key"><code>true</code></p>
+                  <p class="answerChoice"><code>""</code></p>
+                  <p class="answerChoice"><code>"true"</code></p>
+                </div>
+                <div id="l3_question2" class="question" data-get="#l3_star2">
+                  <h3>What is the correct way to change the style of an element?</h3>
+                  <p class="answerChoice"><code>element.style = 'color: blue';</code></p>
+                  <p class="answerChoice key"><code>element.style.color = 'blue';</code></p>
+                  <p class="answerChoice"><code>element.style('color: blue');</code></p>
+                  <p class="answerChoice"><code>element.style('color') = 'blue';</code></p>
+                </div>
+                <div id="l3_question3" class="question" data-get="#l3_star3">
+                  <h3>Which code snippet is INCORRECT?</h3>
+                  <p class="answerChoice"><code>headingEl.style.backgroundColor = "salmon";</code></p>
+                  <p class="answerChoice"><code>mainEl.className += " warning";</code></p>
+                  <p class="answerChoice key"><code>document.body.appendChild = imgEl;</code></p>
+                  <p class="answerChoice"><code>mainEl.classList().add("warning");</code></p>
+                </div>
+              </div> <!-- l3tab4 -->
+              <!-- collect XP button here -->
+              <button class="btn btn-xp-blue xp_button close_modal" data-target="#page_top">Collect XP</button>
+              <button class="btn-close-blue close_modal" data-target="#lesson1">Close &nbsp;<i class="fa fa-times"></i></button>
+            </div> <!-- lessonModal_content -->
+          </div> <!-- lessonModal_box -->
+        </div> <!-- overlay lesson3_modal4 -->
+        <!-- modal -->
+
+        <!-- lesson content -->
+        <div id="lesson3" class="collapse flex-card card-inverse card-darkblue btn-w lesson"> <!-- lesson -->
+          <div class="flex-container flex-center"> <!-- sub flex-container -->
+            <div class="flex-card flex-left"> <!-- flex-card left -->
+              <h4 class="card-title">DOM modification</h4>
+              <p class="card-text">When access a DOM element directly or via a <code>for</code> loop, we can use <code>.</code> or "dot" notation to access that attribute.</p>
+              <details>
+                <summary><strong class="text-warning">Other Attribute Selectors Include:</strong></summary>
+                <ul>
+                  <li><code>element.innerHTML</code></li>
+                  <li><code>element.textContent</code></li>
+                  <li><code>element.setAttribute('property', 'value');</code></li>
+                  <li><code>anchorTag[i].href</code></li>
+                  <li><code>img[i].alt</code></li>
+                  <li><code>input.autosave</code></li>
+                  <li><code>input.checked</code></li>
+                  <li><code>element.class</code></li>
+                  <li><code>element.datetime</code></li>
+                  <li><code>button.disabled</code></li>
+                  <li><code>button.enabled</code></li>
+                  <li><code>element.id</code></li>
+                  <li><code>input.required</code></li>
+                  <li><code>element.target</code></li>
+                  <li><code>element.value</code></li>
+                </ul>
+              </details>
+              <br>
+              <p class='card-text'>You can see more at the following <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes">link</a>.</p>
+              <h5 class='card-title'>Modifying Styles</h5>
+              <p class='card-text'>We can similarly change styles by using <code>.style.property = "value";</code> approach.</p>
+              <h5 class="card-title">Adding Classes</h5>
+              <p>Instead of littering your JavaScript with essential CSS rules, it's better to throw those CSS rules in a class and then use JavaScript to add and remove those classes.</p>
+              <ul>
+                <li><code>.className = "newClass"</code> sets or replaces one class name</li>
+                <li><code>.className += "newClass"</code> adds another class</li>
+                <li><code>.classList.add('newClass')</code> works in newer browsers</li>
+              </ul>
+              <p class='card-text'>Check usability for your browser at the <a href='http://caniuse.com/#search=classList'>Can I Use website</a></p>
+              <h5 class='card-title'>Creating HTML Elements</h5>
+              <p class='card-text'>You set elements to the <code>.innerHTML</code>, but here is another way:</p>
+              <ul>
+                <li><code>var createElement = document.createElement('html_tag');</code></li>
+                <li><code>createElement.src = "img/source"</code></li>
+                <li><code>createElement.alt = "Image description"</code></li>
+                <li><code>document.body.appendChild(createElement);</code></li>
+                <li><code>var createText = document.createTextNode('Node text');</code></li>
+                <li><code>createElement.appendChild(createText);</code></li>
+              </ul>
+              <p class='card-text'>However this was much more code than just using <code>.innerHTML</code>. It is more preferred to use libraries like <a href="http://www.jquery.com">jQuery</a> for easier DOM modification.</p>
+            </div> <!-- flex-card left -->
+
+            <div class='flex-card'> <!-- flex-card right -->
+              <div class='flex-container-column'>
+                <h3 class='card-title card-title-main'>&nbsp;</h3>
+                <h5 class='card-title'>Example Code:</h5>
+                <button type="button" class="btn btn-warning-outline modal_button" data-get="#lesson3_modal1">Attribute Selectors</button>
+                <button type="button" class="btn btn-warning-outline modal_button" data-get="#lesson3_modal2">Using <code>.style</code></button>
+                <button type="button" class="btn btn-warning-outline modal_button" data-get="#lesson3_modal3">Tweaking Classes</button>
+                <button type="button" class="btn btn-warning-outline modal_button" data-get="#lesson3_modal4">Creating HTML Elements</button>
+                <!-- quiz button -->
+                <button type="button" class="btn btn-warning modal_button quiz_button" data-get="#lesson3_modalQuiz">Quiz</button>
+              </div>
+            </div> <!-- flex-card right -->
+
+          </div> <!-- sub flex-container -->
+        </div> <!-- lesson lesson3 -->
+
+        <!-- lesson4 -->
+        <!-- lesson4_modal1 -->
+        <div id="lesson4_modal1" class="overlay">
+          <div class="lessonModal_box">
+            <div class="lessonModal_title flex-container">
+              <h3 class="flex-card-grow-initial flex-card-absorb-right">Event Listeners</h3>
+              <button class="btn-close-blue close_modal flex-card-grow-initial" data-target="#lesson4">Close &nbsp;<i class="fa fa-times"></i></button>
+            </div>
+            <!-- Codepen demo -->
+            <p data-height="268" data-theme-id="0" data-slug-hash="jbGbPO" data-default-tab="result" data-user="craigocurtis" class='codepen'>See the Pen <a href='http://codepen.io/craigocurtis/pen/jbGbPO/'>Khan Demo - Button Event Listener</a> by Craig Curtis (<a href='http://codepen.io/craigocurtis'>@craigocurtis</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+            <script async src="http://assets.codepen.io/assets/embed/ei.js"></script>
+          </div> <!-- lessonModal_box -->
+        </div> <!-- overlay lesson4_modal1 --> 
+
+        <!-- lesson4_modal2 -->
+        <div id="lesson4_modal2" class="overlay">
+          <div class="lessonModal_box">
+            <div class="lessonModal_title flex-container">
+              <h3 class="flex-card-grow-initial flex-card-absorb-right">DOM Event Types</h3>
+              <button class="btn-close-blue close_modal flex-card-grow-initial" data-target="#lesson4">Close &nbsp;<i class="fa fa-times"></i></button>
+            </div>
+            <!-- Codepen demo -->
+            <p data-height="268" data-theme-id="0" data-slug-hash="epGNGY" data-default-tab="result" data-user="craigocurtis" class='codepen'>See the Pen <a href='http://codepen.io/craigocurtis/pen/epGNGY/'>epGNGY</a> by Craig Curtis (<a href='http://codepen.io/craigocurtis'>@craigocurtis</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+            <script async src="http://assets.codepen.io/assets/embed/ei.js"></script>
+          </div> <!-- lessonModal_box -->
+        </div> <!-- overlay lesson4_modal2 --> 
+
+        <!-- lesson4_modal3 -->
+        <div id="lesson4_modal3" class="overlay">
+          <div class="lessonModal_box">
+            <div class="lessonModal_title flex-container">
+              <h3 class="flex-card-grow-initial flex-card-absorb-right">Processing Forms</h3>
+              <button class="btn-close-blue close_modal flex-card-grow-initial" data-target="#lesson4">Close &nbsp;<i class="fa fa-times"></i></button>
+            </div>
+            <!-- Codepen demo -->
+            <p data-height="268" data-theme-id="0" data-slug-hash="VvMjqg" data-default-tab="result" data-user="craigocurtis" class='codepen'>See the Pen <a href='http://codepen.io/craigocurtis/pen/VvMjqg/'>Processing Forms - Khan Demo</a> by Craig Curtis (<a href='http://codepen.io/craigocurtis'>@craigocurtis</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+            <script async src="http://assets.codepen.io/assets/embed/ei.js"></script>
+          </div> <!-- lessonModal_box -->
+        </div> <!-- overlay lesson4_modal3 -->
+
+        <!-- lesson4_modal4 -->
+        <div id="lesson4_modal4" class="overlay">
+          <div class="lessonModal_box">
+            <div class="lessonModal_title flex-container">
+              <h3 class="flex-card-grow-initial flex-card-absorb-right">Preventing Event Defaults</h3>
+              <button class="btn-close-blue close_modal flex-card-grow-initial" data-target="#lesson4">Close &nbsp;<i class="fa fa-times"></i></button>
+            </div>
+            <!-- Codepen demo -->
+            <p data-height="268" data-theme-id="0" data-slug-hash="vNeRow" data-default-tab="result" data-user="craigocurtis" class='codepen'>See the Pen <a href='http://codepen.io/craigocurtis/pen/vNeRow/'>Random Light Chain - Preventing Anchor Link Defaults - Khan Demo</a> by Craig Curtis (<a href='http://codepen.io/craigocurtis'>@craigocurtis</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+            <script async src="http://assets.codepen.io/assets/embed/ei.js"></script>
+          </div> <!-- lessonModal_box -->
+        </div> <!-- overlay lesson4_modal4 -->
+
+        <!-- modal quiz -->
+        <div id="lesson4_modalQuiz" class="overlay">
+          <div class="lessonModal_box">
+            <div class="lessonModal_title">
+              <h3 class="lessonNumber">Lesson 4 Quiz</h3>
+            </div>
+            <div class="lessonModal_content">
+              <!-- modal tabs -->
+              <div id="l4tab4" class="tabs">
+                <ul>
+                  <li><a href="#l4_question1"><i class="fa fa-star-o"></i></a></li>
+                  <li><a href="#l4_question2"><i class="fa fa-star-o"></i></a></li>
+                  <li><a href="#l4_question3"><i class="fa fa-star-o"></i></a></li>
+                </ul>
+                <div id="l4_question1" class="question" data-get="#l4_star1">
+                  <h3>Which event listener combination is false?</h3>
+                  <p class="answerChoice key">touch : blur</p>
+                  <p class="answerChoice">mouse : contextmenu</p>
+                  <p class="answerChoice">form : change</p>
+                  <p class="answerChoice">window : scroll</p>
+                </div>
+                <div id="l4_question2" class="question" data-get="#l4_star2">
+                  <h3>What is the correct way to access the mouse coordinates?</h3>
+                  <p class="answerChoice">function(event){event.clientX;event.clientY;event.offsetX;event.offsetY}</p>
+                  <p class="answerChoice">function(event){event.offsetX;event.offsetY}</p>
+                  <p class="answerChoice">function(event){event.X;event.Y}</p>
+                  <p class="answerChoice key"><code>function(event){event.clientX;event.clientY}</code></p>
+                </div>
+                <div id="l4_question3" class="question" data-get="#l4_star3">
+                  <h3>Which form event is called when you leave an input?</h3>
+                  <p class="answerChoice"><code>focus</code></p>
+                  <p class="answerChoice"><code>change</code></p>
+                  <p class="answerChoice"><code>submit</code></p>
+                  <p class="answerChoice key"><code>blur</code></p>
+                </div>
+              </div> <!-- l4tab4 -->
+              <!-- collect XP button here -->
+              <button class="btn btn-xp-blue xp_button close_modal" data-target="#page_top">Collect XP</button>
+              <button class="btn-close-blue close_modal" data-target="#lesson4">Close &nbsp;<i class="fa fa-times"></i></button>
+            </div> <!-- lessonModal_content -->
+          </div> <!-- lessonModal_box -->
+        </div> <!-- overlay lesson4_modal4 -->
+        <!-- modal -->
+        <div id="lesson4" class="collapse flex-card card-inverse card-darkblue btn-w lesson"> <!-- lesson -->
+          <div class="flex-container flex-center"> <!-- sub flex-container -->
+            <div class="flex-card flex-left"> <!-- flex-card left -->
+              <h4 class="card-title">DOM events</h4>
+              <p class="card-text">We need to now use these JavaScript methods as scripts that responses to user interactions. These are called <strong class="text-warning">callback functions</strong>.</p>
+              <h5 class="card-title">Event Listeners</h5>
+              <p class="card-text">One of the most common <strong class="text-warning">Event Listeners</strong> is the <code>click</code> function.</p>
+
+              <p class='card-text'>Passing in a <strong class="text-warning">named function</strong></p>
+              <code>
+                var element = document.getElementById('...');<br>
+                var clickFunction = function(){...}</br>
+                element.addEventListener('click', clickFunction);<br>
+              </code>
+              <br>
+              <p class='card-text'>Passing in an <strong class="text-warning">anonymous function</strong></p>
+              <code>
+                var element = document.getElementById('...');<br>
+                element.addEventListener('click', function(){...});<br>
+              </code>
+              <br>
+              <h6 class="card-title">Other Common Event Listeners include:</h6>
+              <details>
+                <summary><strong class="text-warning">Mouse Events</strong></summary>
+                <ul>
+                  <li><code>click</code></li>
+                  <li><code>dblclick</code></li>
+                  <li><code>mousedown</code></li>
+                  <li><code>mouseup</code></li>
+                  <li><code>mouseenter</code></li>
+                  <li><code>mouseleave</code></li>
+                  <li><code>mousemove</code></li>
+                  <li><code>mouseover</code></li>
+                  <li><code>mousewheel</code></li>
+                  <li><code>contextmenu</code></li>
+                </ul>
+              </details>
+              <details>
+                <summary><strong class="text-warning">Key Events</strong></summary>
+                <ul>
+                  <li><code>keydown</code></li>
+                  <li><code>keyup</code></li>
+                  <li><code>keypress</code></li>
+                </ul>
+              </details>
+              <details>
+                <summary><strong class="text-warning">Touch Events</strong></summary>
+                <ul>
+                  <li><code>touchstart</code></li>
+                  <li><code>touchmove</code></li>
+                  <li><code>touchend</code></li>
+                  <li><code>touchcancel</code></li>
+                </ul>
+              </details>
+              <details>
+                <summary><strong class="text-warning">Form Events</strong></summary>
+                <ul>
+                  <li><code>focus</code></li>
+                  <li><code>blur</code></li>
+                  <li><code>change</code></li>
+                  <li><code>submit</code></li>
+                </ul>
+              </details>
+              <details>
+                <summary><strong class="text-warning">Window Events</strong></summary>
+                <ul>
+                  <li><code>error</code></li>
+                  <li><code>resize</code></li>
+                  <li><code>scroll</code></li>
+                  <li><code>hashchange</code></li>
+                  <li><code>load</code></li>
+                  <li><code>unload</code></li>
+                </ul>
+              </details>
+              <br>
+              <h5 class="card-title">DOM Event Types</h5>
+              <p class="card-text">THe browser records many event properties like the <code>x</code> and <code>y</code> positions of the mouse. We can use the <code>mouseover</code> event, for instance, to create a simple drawing app. We can pass in <code>event</code> as a parameter to access these properties.</p>
+              <!-- code -->
+              <details>
+                <summary><strong class="text-warning">Paint Program Basics</strong></summary>
+                <code>
+                  var canvas = document.getElementById('canvas');<br>
+                  var onMouseMove = function(event){<br>
+                  &nbsp;&nbsp;var paintBrush = document.createElement('div');<br>
+                  &nbsp;&nbsp;paintBrush.className = 'paintBrush';<br>
+                  &nbsp;&nbsp;document.body.appendChild('paintBrush');<br>
+                  &nbsp;&nbsp;paintBrush.style.top = event.clientY + 'px';<br>
+                  &nbsp;&nbsp;paintBrush.style.left = event.clientX + 'px';<br>
+                  }<br>
+                  canvas.addEventListener('mousemove', onMouseMove);<br>
+                </code>
+
+              </details>
+              <br>
+              <h5 class="card-title">Processing Forms</h5>
+              <p class="card-text">Both styling and processing forms take a bit more skill. Forms especially are more difficult due to them requiring back-end languages like <strong class="text-warning">PHP</strong>, <strong class="text-warning">Ruby</strong>, <strong class="text-warning">Python</strong>, or some more modern back-end JavaScript like <strong class="text-warning">nodeJS</strong>. Here, we'll just be covering the front-end basics.</p>
+              <p class="card-text">Key to forms is access user input. Therefore, target input field and then we can access the <code>.value</code> property. Regarding event listeners, we can check different inputs for events like <code>focus</code>, <code>blur</code>, <code>change</code>, and <code>submit</code>.
+              <h5 class="card-title">Preventing Event Defaults</h5>
+              <p class="card-text">You may want to prevent certain default actions in the broswer like <strong class="text-warning">page refresh</strong>. In order to stop this from happening, pass a parameter, preferably <code>event</code> to the function where the action is to be prevented. Then we can access the <code>.preventDefault()</code> method of that parameter.</p>
+              <code>
+                function(event){event.preventDefault(); ... }
+              </code>
+            </div> <!-- flex-card left -->
+
+            <div class="flex-card"> <!-- flex-card right -->
+              <div class="flex-container-column">
+                <h3 class="card-title card-title-main">&nbsp;</h3>
+                <h5 class="card-title">Example Code:</h5>
+                <button type="button" class="btn btn-warning-outline modal_button" data-get="#lesson4_modal1">Event Listeners</button>
+                <button type="button" class="btn btn-warning-outline modal_button" data-get="#lesson4_modal2">DOM Event Types</button>
+                <button type="button" class="btn btn-warning-outline modal_button" data-get="#lesson4_modal3">Processing Forms</button>
+                <button type="button" class="btn btn-warning-outline modal_button" data-get="#lesson4_modal4">Event Defaults</button>
+                <!-- quiz button -->
+                <button type="button" class="btn btn-warning modal_button quiz_button" data-get="#lesson4_modalQuiz">Quiz</button>
+              </div>
+            </div> <!-- flex-card right -->
+
+          </div> <!-- sub flex-container -->
+        </div> <!-- lesson -->
+
+        <!-- lesson5 -->
+        <!-- lesson5_modal1 -->
+        <div id="lesson5_modal1" class="overlay">
+          <div class="lessonModal_box">
+            <div class="lessonModal_title flex-container">
+              <h3 class="flex-card-grow-initial flex-card-absorb-right"><code>setInterval()</code></h3>
+              <button class="btn-close-blue close_modal flex-card-grow-initial" data-target="#lesson5">Close &nbsp;<i class="fa fa-times"></i></button>
+            </div>
+            <!-- Codepen demo -->
+            <p data-height="400" data-theme-id="0" data-slug-hash="ZbXgyr" data-default-tab="result" data-user="craigocurtis" class='codepen'>See the Pen <a href='http://codepen.io/craigocurtis/pen/ZbXgyr/'>Countdown Timer ProgressBar - Khan Demo on setTimeout</a> by Craig Curtis (<a href='http://codepen.io/craigocurtis'>@craigocurtis</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+            <script async src="http://assets.codepen.io/assets/embed/ei.js"></script>
+          </div> <!-- lessonModal_box -->
+        </div> <!-- overlay lesson5_modal1 --> 
+
+        <!-- lesson5_modal2 -->
+        <div id="lesson5_modal2" class="overlay">
+          <div class="lessonModal_box">
+            <div class="lessonModal_title flex-container">
+              <h3 class="flex-card-grow-initial flex-card-absorb-right"><code>requestAnimationFrame()</code></h3>
+              <button class="btn-close-blue close_modal flex-card-grow-initial" data-target="#lesson5">Close &nbsp;<i class="fa fa-times"></i></button>
+            </div>
+            <!-- Codepen demo -->
+            <!-- forked Codepen -->
+            <p data-height="268" data-theme-id="0" data-slug-hash="zvRVYX" data-default-tab="result" data-user="craigocurtis" class='codepen'>See the Pen <a href='http://codepen.io/craigocurtis/pen/zvRVYX/'>infinite tree of life</a> by Craig Curtis (<a href='http://codepen.io/craigocurtis'>@craigocurtis</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+            <script async src="http://assets.codepen.io/assets/embed/ei.js"></script>
+          </div> <!-- lessonModal_box -->
+        </div> <!-- overlay lesson5_modal2 --> 
+
+        <!-- lesson5_modal3 -->
+        <div id="lesson5_modal3" class="overlay">
+          <div class="lessonModal_box">
+            <div class="lessonModal_title">
+              <h3>Coming Soon!</h3>
+            </div>
+            <div class="lessonModal_content">
+              <!-- modal tabs -->
+              <div id="l5tab3" class="tabs">
+                <ul>
+                  <li><a href="#l5m3tabs-html">HTML</a></li>
+                  <li><a href="#l5m3tabs-js">JS</a></li>
+                </ul>
+                <div id="l5m3tabs-html">
+                  <code>
+                  </code>
+                </div>
+                <div id="l5m3tabs-js">
+                  <code>
+                  </code>
+                </div>
+              </div> <!-- l5tab3 -->
+              <button class="btn-close-blue close_modal" data-target="#lesson5">Close &nbsp;<i class="fa fa-times"></i></button>
+            </div> <!-- lessonModal_content -->
+          </div> <!-- lessonModal_box -->
+        </div> <!-- overlay lesson5_modal3 -->
+
+        <!-- modal quiz -->
+        <div id="lesson5_modalQuiz" class="overlay">
+          <div class="lessonModal_box">
+            <div class="lessonModal_title">
+              <h3 class="lessonNumber">Lesson 5 Quiz</h3>
+            </div>
+            <div class="lessonModal_content">
+              <!-- modal tabs -->
+              <div id="l5tab4" class="tabs">
+                <ul>
+                  <li><a href="#l5_question1"><i class="fa fa-star-o"></i></a></li>
+                  <li><a href="#l5_question2"><i class="fa fa-star-o"></i></a></li>
+                  <li><a href="#l5_question3"><i class="fa fa-star-o"></i></a></li>
+                </ul>
+                <div id="l5_question1" class="question" data-get="#l5_star1">
+                  <h3>Which is the correct code snippet when using <code>setTimeout</code>?</h3>
+                  <p class="answerChoice"><code>stopper = setTimeout(progressCountdown);</code></p>
+                  <p class="answerChoice"><code>var stopper = setTimeout(1000, progressCountdown);</code></p>
+                  <p class="answerChoice"><code>var stopper = setTimeout(1000);</code></p>
+                  <p class="answerChoice key"><code>var stopper = setTimeout(progressCountdown, 1000);</code></p>
+                </div>
+                <div id="l5_question2" class="question" data-get="#l5_star2">
+                  <h3>Coming Soon!</h3>
+                  <p class="answerChoice">Coming Soon!</p>
+                  <p class="answerChoice">Coming Soon!</p>
+                  <p class="answerChoice key">Coming Soon!</p>
+                  <p class="answerChoice">Coming Soon!</p>
+                </div>
+                <div id="l5_question3" class="question" data-get="#l5_star3">
+                  <h3>Coming Soon!</h3>
+                  <p class="answerChoice"><code>Coming Soon!</code></p>
+                  <p class="answerChoice"><code>Coming Soon!</code></p>
+                  <p class="answerChoice"><code>Coming Soon!</code></p>
+                  <p class="answerChoice key"><code>Coming Soon!</code></p>
+                </div>
+              </div> <!-- l5tab4 -->
+              <!-- collect XP button here -->
+              <button class="btn btn-xp-blue xp_button close_modal" data-target="#page_top">Collect XP</button>
+              <button class="btn-close-blue close_modal" data-target="#lesson5">Close &nbsp;<i class="fa fa-times"></i></button>
+            </div> <!-- lessonModal_content -->
+          </div> <!-- lessonModal_box -->
+        </div> <!-- overlay lesson5_modal4 -->
+        <!-- modal -->
+
+        <div id="lesson5" class="collapse flex-card card-inverse card-darkblue btn-w lesson"> <!-- lesson -->
+          <div class="flex-container flex-center"> <!-- sub flex-container -->
+            <div class="flex-card flex-left"> <!-- flex-card left -->
+              <h4 class="card-title">DOM animation</h4>
+              <h5 class="card-title">The <code>window</code> Object</h5>
+              <p class="card-text">Some interesting parts of the <code>window</code> object to look forward to are:</p>
+              <details>
+                <summary><strong class="text-warning">Window Properties</strong></summary>
+                <ul>
+                  <li><code>Cache</code></li>
+                  <li><code>CacheStorage</code></li>
+                  <li><code>Crypto</code></li>
+                  <li><code>CryptoKey</code></li>
+                  <li><code>DataTransfer</code></li>
+                  <li><code>Error</code></li>
+                  <li><code>Gamepad</code></li>
+                  <li><code>History</code></li>
+                  <li><code>JSON</code></li>
+                  <li><code>SpeechSynthesisEvent</code></li>
+                  <li><code>Storage</code></li>
+                  <li><code>Touch</code></li>
+                  <li><code>localStorage</code></li>
+                  <li><code>webkitMediaStream</code></li>
+                  <li><code>webkitMediaStream</code></li>
+                  <li><code>webkitSpeechRecognition</code></li>
+                </ul>
+              </details>
+              <br>
+              <h5 class="card-title">Animating the DOM with <code>setTimeout</code></h5>
+              <p class="card-text">We can use the <code>setTimeout</code> function or <code>setInterval</code> functions for repeated Javascript animations. attaching these methods to the <code>window</code> object is now optional. In order to use these, store them in a variable. In order to stop them, put the variable as a variable in the <code>clearTimeout</code> or <code>clearInterval</code> functions respectively.</p>
+              <details>
+                <summary><strong class="text-warning">setTimeout()</strong></summary>
+                <ul>
+                  <li>
+                    <code>
+                      var myFunction(){<br>
+                      &nbsp;&nbsp;var stopper = setTimeout(myFunction, 1000);<br>
+                      &nbsp;&nbsp;if (condition){<br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;clearTimeout(stopper);<br>
+                      &nbsp;&nbsp;}<br>
+                      }<br>
+                    </code>
+                  </li>
+                </ul>
+              </details>
+              <details>
+                <summary><strong class="text-warning">setInterval()</strong></summary>
+                <ul>
+                  <li>
+                    <code>
+                      var myFunction(){<br>
+                      &nbsp;&nbsp;var stopper = setInterval(myFunction, 1000);<br>
+                      &nbsp;&nbsp;if (condition){<br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;clearInterval(stopper);<br>
+                      &nbsp;&nbsp;}<br>
+                      }<br>
+                    </code>
+                  </li>
+                </ul>
+              </details>
+              <br>
+              <h5 class="card-title"><code>requestAnimationFrame</code></h5>
+              <p class="card-text">Delays may occur when using <code>setInterval</code> and <code>setTimeout</code>, this it is better practice to use <code>requestAnimationFrame</code> for animations.</p>
+              <details>
+                <summary><strong class="text-warning">requestAnimationFrame(functionName, 1000)</strong></summary>
+                <ul>
+                  <li>
+                    <code>
+                    var startTime = new Date().getTime();<br>
+                    var makeItGrow = function() {<br>
+                    &nbsp;&nbsp;var currTime = new Date().getTime();<br>
+                    &nbsp;&nbsp;var newWidth = (50 + ((currTime - startTime)/1000) * 30);<br>
+                    &nbsp;&nbsp;img.style.width = newWidth + "px";<br>
+                    &nbsp;&nbsp;if (newWidth < 300){<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;window.requestAnimationFrame(makeItGrow);<br>
+                    &nbsp;&nbsp;}
+                    };<br>
+                    makeItGrow();<br>
+                    </code>
+                  </li>
+                </ul>
+              </details>
+              <br>
+              <h5 class="card-title">CSS Animations</h5>
+              <p class="card-text">Modern animation implementation may call for CSS instead of javascript for style transitions and transformations. Here, we will make use of the <code>@keyframes</code> rules in CSS.</p>
+            </div> <!-- flex-card left -->
+
+            <div class="flex-card"> <!-- flex-card right -->
+              <div class="flex-container-column">
+                <h3 class="card-title card-title-main">&nbsp;</h3>
+                <h5 class="card-title">Example Code:</h5>
+                <button type="button" class="btn btn-warning-outline modal_button" data-get="#lesson5_modal1"><code>setInterval()</code></button>
+                <button type="button" class="btn btn-warning-outline modal_button" data-get="#lesson5_modal2"><code>requestAnimationFrame()</code></button>
+                <button type="button" class="btn btn-warning-outline modal_button" data-get="#lesson5_modal3">Coming Soon!</button>
+                <!-- quiz button -->
+                <button type="button" class="btn btn-warning modal_button quiz_button" data-get="#lesson5_modalQuiz">Quiz</button>
+              </div>
+            </div> <!-- flex-card right -->
+
+          </div> <!-- sub flex-container -->
+        </div> <!-- lesson -->
+
+        <!-- lesson6 -->
+        <!-- lesson6_modal1 -->
+        <div id="lesson6_modal1" class="overlay">
+          <div class="lessonModal_box">
+            <div class="lessonModal_title">
+              <h3>Coming Soon!</h3>
+            </div>
+            <div class="lessonModal_content">
+              <!-- modal tabs -->
+              <div id="l6tab1" class="tabs">
+                <ul>
+                  <li><a href="#l6m1tabs-html">HTML</a></li>
+                </ul>
+                <div id="l6m1tabs-html">
+                  <code>
+                  </code>
+                </div>
+              </div> <!-- l6tab2 -->
+              <button class="btn-close-blue close_modal" data-target="#lesson6">Close &nbsp;<i class="fa fa-times"></i></button>
+            </div> <!-- lessonModal_content -->
+          </div> <!-- lessonModal_box -->
+        </div> <!-- overlay lesson1_modal1 --> 
+
+        <!-- lesson6_modal2 -->
+        <div id="lesson6_modal2" class="overlay">
+          <div class="lessonModal_box">
+            <div class="lessonModal_title">
+              <h3>Coming Soon!</h3>
+            </div>
+            <div class="lessonModal_content">
+              <!-- modal tabs -->
+              <div id="l6tab2" class="tabs">
+                <ul>
+                  <li><a href="#l6m2tabs-html">HTML</a></li>
+                  <li><a href="#l6m2tabs-js">JS</a></li>
+                </ul>
+                <div id="l6m2tabs-html">
+                  <code>
+                  </code>
+                </div>
+                <div id="l6m2tabs-js">
+                  <code>
+                  </code>
+                </div>
+              </div> <!-- l1tab1 -->
+              <button class="btn-close-blue close_modal" data-target="#lesson6">Close &nbsp;<i class="fa fa-times"></i></button>
+            </div> <!-- lessonModal_content -->
+          </div> <!-- lessonModal_box -->
+        </div> <!-- overlay lesson6_modal2 --> 
+
+        <!-- lesson6_modal3 -->
+        <div id="lesson6_modal3" class="overlay">
+          <div class="lessonModal_box">
+            <div class="lessonModal_title">
+              <h3>Coming Soon!</h3>
+            </div>
+            <div class="lessonModal_content">
+              <!-- modal tabs -->
+              <div id="l6tab3" class="tabs">
+                <ul>
+                  <li><a href="#l6m3tabs-html">HTML</a></li>
+                  <li><a href="#l6m3tabs-js">JS</a></li>
+                </ul>
+                <div id="l6m3tabs-html">
+                  <code>
+                  </code>
+                </div>
+                <div id="l6m3tabs-js">
+                  <code>
+                  </code>
+                </div>
+              </div> <!-- l6tab3 -->
+              <button class="btn-close-blue close_modal" data-target="#lesson6">Close &nbsp;<i class="fa fa-times"></i></button>
+            </div> <!-- lessonModal_content -->
+          </div> <!-- lessonModal_box -->
+        </div> <!-- overlay lesson6_modal3 -->
+
+        <!-- modal quiz -->
+        <div id="lesson6_modalQuiz" class="overlay">
+          <div class="lessonModal_box">
+            <div class="lessonModal_title">
+              <h3 class="lessonNumber">Lesson 6 Quiz</h3>
+            </div>
+            <div class="lessonModal_content">
+              <!-- modal tabs -->
+              <div id="l6tab4" class="tabs">
+                <ul>
+                  <li><a href="#l6_question1"><i class="fa fa-star-o"></i></a></li>
+                  <li><a href="#l6_question2"><i class="fa fa-star-o"></i></a></li>
+                  <li><a href="#l6_question3"><i class="fa fa-star-o"></i></a></li>
+                </ul>
+                <div id="l6_question1" class="question" data-get="#l6_star1">
+                  <h3>Coming Soon!</h3>
+                  <p class="answerChoice">Coming Soon!</p>
+                  <p class="answerChoice key">Coming Soon!</p>
+                  <p class="answerChoice">Coming Soon!</p>
+                  <p class="answerChoice">Coming Soon!</p>
+                </div>
+                <div id="l6_question2" class="question" data-get="#l6_star2">
+                  <h3>Coming Soon!</h3>
+                  <p class="answerChoice">Coming Soon!</p>
+                  <p class="answerChoice">Coming Soon!</p>
+                  <p class="answerChoice key">Coming Soon!</p>
+                  <p class="answerChoice">Coming Soon!</p>
+                </div>
+                <div id="l6_question3" class="question" data-get="#l6_star3">
+                  <h3>Coming Soon!</h3>
+                  <p class="answerChoice"><code>Coming Soon!</code></p>
+                  <p class="answerChoice"><code>Coming Soon!</code></p>
+                  <p class="answerChoice"><code>Coming Soon!</code></p>
+                  <p class="answerChoice key"><code>Coming Soon!</code></p>
+                </div>
+              </div> <!-- l6tab4 -->
+              <!-- collect XP button here -->
+              <button class="btn btn-xp-blue xp_button close_modal" data-target="#page_top">Collect XP</button>
+              <button class="btn-close-blue close_modal" data-target="#lesson6">Close &nbsp;<i class="fa fa-times"></i></button>
+            </div> <!-- lessonModal_content -->
+          </div> <!-- lessonModal_box -->
+        </div> <!-- overlay lesson6_modalQuiz -->
+        <!-- modal -->
+        <div id="lesson6" class="collapse flex-card card-inverse card-darkblue btn-w lesson"> <!-- lesson -->
+          <div class="flex-container flex-center"> <!-- sub flex-container -->
+            <div class="flex-card flex-left"> <!-- flex-card left -->
+              <h4 class="card-title">Using JS libraries in your webpage</h4>
+              <p class="card-text">Learn how to include JS libraries on your webpage, so that you can use functionality built by other web developers.</p>
+            </div> <!-- flex-card left -->
+
+            <div class="flex-card"> <!-- flex-card right -->
+              <div class="flex-container-column">
+                <h3 class="card-title card-title-main">&nbsp;</h3>
+                <h5 class="card-title">Example Code:</h5>
+                <button type="button" class="btn btn-warning-outline modal_button" data-get="#lesson6_modal1">Coming Soon!</button>
+                <button type="button" class="btn btn-warning-outline modal_button" data-get="#lesson6_modal2">Coming Soon!</button>
+                <button type="button" class="btn btn-warning-outline modal_button" data-get="#lesson6_modal3">Coming Soon!</button>
+                <!-- quiz button -->
+                <button type="button" class="btn btn-warning modal_button quiz_button" data-get="#lesson6_modalQuiz">Quiz</button>
+              </div>  
+            </div> <!-- flex-card right -->
+
+          </div> <!-- sub flex-container -->
+        </div> <!-- lesson -->
+
+      </div> <!-- individual lessons flex-container-column -->
+    </section> <!-- collapse --> <!-- album -->
+
+    <footer class="bg-yellow text-muted">
+      <div class="container">
+        <p class="pull-right">
+          <button id="back_to_top" class="btn-blue-outline" data-target="#page_top">Back to top</button>
+        </p>
+        <p>This page is &copy;2015 craigocurtis.com</p>
+      </div>
+    </footer>
+
+    <!-- modals go at end of body -->
+    <!-- says in jQuery, but need to put in markup -->
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <!-- bootstrap -->
+    <script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- animatedscroll -->
+    <script src="js/animatescroll.min.js"></script>
+    <!-- my jQuery functions -->
+    <script src="js/myquery.js"></script>
+    <script src="js/demos.js"></script>
+  </body>
+</html>

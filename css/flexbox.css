@@ -1,0 +1,454 @@
+/*********** flexbox styles ******************/
+/******* flex styles ********/
+
+/* default, displays first flex item on left, mimics floating effect */
+.flex-container {
+	display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-flex-wrap: wrap;
+	    -ms-flex-wrap: wrap;
+	        flex-wrap: wrap;
+}
+
+/* displays flex items first child on right */
+.flex-container-reverse {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: reverse;
+	-webkit-flex-direction: row-reverse;
+	    -ms-flex-direction: row-reverse;
+	        flex-direction: row-reverse;
+    -webkit-flex-wrap: wrap;
+	    -ms-flex-wrap: wrap;
+	        flex-wrap: wrap;
+}
+
+/* displays flex items vertically */
+.flex-container-column {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+    -webkit-flex-wrap: wrap;
+	    -ms-flex-wrap: wrap;
+	        flex-wrap: wrap;
+}
+
+/* displays flex items vertically, first flex child at bottom */
+.flex-container-column-reverse {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: reverse;
+	-webkit-flex-direction: column-reverse;
+	    -ms-flex-direction: column-reverse;
+	        flex-direction: column-reverse;
+    -webkit-flex-wrap: wrap;
+	    -ms-flex-wrap: wrap;
+	        flex-wrap: wrap;
+}
+
+/* SUPPORTING displays flex items justified in parent container */
+.flex-justified {
+	-webkit-box-pack: justify;
+	-webkit-justify-content: space-between;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
+}
+/* SUPPORTING horizontally centers content */
+.flex-center {
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+}
+
+/* SUPPORTING pushes or "floats" flex items to the right */
+.flex-end {
+	-webkit-box-pack: end;
+	-webkit-justify-content: flex-end;
+	    -ms-flex-pack: end;
+	        justify-content: flex-end;
+}
+
+/** SUPPORTING absorbs left margin, pushes all siblings to the furthest left edge */
+/**** if no siblings to the left, has similar effect as "flex-end" of flex-container */
+.flex-card-absorb-left {
+	margin-left: auto;
+}
+
+/** SUPPORTING absorbs right margin, pushes all siblings to the furthest right edge */
+.flex-card-absorb-right {
+	margin-right: auto;
+}
+
+/** SUPPORTING
+ **** on all children - puts empty spaces to the left of each child, pushing them to the right ****/
+.flex-card-absorb-both {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.flex-card {
+	padding: .75rem;
+	margin-bottom: 2rem;
+	border: 0;
+	/* gives equal widths to flex-cards */
+	-webkit-box-flex: 1;
+	-webkit-flex-grow: 1;
+	    -ms-flex-positive: 1;
+	        flex-grow: 1;
+	-webkit-flex: 1;
+	/* makes all flex-cards have the same height */
+	-webkit-align-self: stretch;
+        -ms-flex-item-align: stretch;
+            align-self: stretch;
+}
+
+/** SUPPORTING for flexcard **/
+
+/**** resets size of flex item ****/
+/**** flex-card width is width of text or image content ****/
+.flex-card-grow-initial {
+	/* gives equal widths to flex-cards */
+	-webkit-box-flex: initial;
+	-webkit-flex-grow: initial;
+	    -ms-flex-positive: initial;
+	        flex-grow: initial;
+	-webkit-flex: initial;
+}
+
+/**** doubles size of flex item ****/
+/**** the number represents the ratio of freespace that should be taken by the flex item ****/
+.flex-card-grow-2 {
+	-webkit-box-flex: 2;
+	-webkit-flex-grow: 2;
+	    -ms-flex-positive: 2;
+	        flex-grow: 2;	
+}
+
+/** SUPPORTING for flexcard **/
+/**** triples size of flex item ****/
+.flex-card-grow-3 {
+	-webkit-box-flex: 3;
+	-webkit-flex-grow: 3;
+	    -ms-flex-positive: 3;
+	        flex-grow: 3;	
+}
+
+/** SUPPORTING for flexcard **/
+/**** quadruples size of flex item ****/
+.flex-card-grow-4 {
+	-webkit-box-flex: 4;
+	-webkit-flex-grow: 4;
+	    -ms-flex-positive: 4;
+	        flex-grow: 4;	
+}
+
+/** SUPPORTING for flexcard **/
+/**** moves item to first position on the left ****/
+.flex-card-first {
+	-webkit-box-ordinal-group: 0;
+    -webkit-order: -1;
+        -ms-flex-order: -1;
+            order: -1;
+}
+
+/** SUPPORTING for flexcard **/
+/**** vertically centers according to other flexcards ****/
+.flex-card-v-center {
+    -webkit-align-self: center;
+        -ms-flex-item-align: center;
+            align-self: center;
+}
+
+/** SUPPORTING for flexcard **/
+/**** vertically pushes flex item to bottom ****/
+.flex-card-v-bottom {
+    -webkit-align-self: flex-end;
+        -ms-flex-item-align: end;
+            align-self: flex-end;
+}
+
+/* create flex-image class */
+.flex-card-image {
+	width: 100%;
+	box-shadow: 0px 0px 1px 1px #ccc;
+}
+
+/*********************************************************/
+/************** General Multi-Column Layout **************/
+/** this section is to display paragraphs in flex format */
+/*********************************************************/
+
+.text_col_stretch_2 {
+	-webkit-column-count: 2;
+	   -moz-column-count: 2;
+	        column-count: 2;
+}
+
+.text_col_stretch_3 {
+	-webkit-column-count: 3;
+	   -moz-column-count: 3;
+	        column-count: 3;
+}
+
+.text_col_stretch_4 {
+	-webkit-column-count: 4;
+	   -moz-column-count: 4;
+	        column-count: 4;
+}
+
+/*********** Responsive Multi-Column Layout ***********/
+
+/**** always this number of columns ****/
+.text-col-3 {
+	-webkit-columns: 6.25rem 3;
+	   -moz-columns: 6.25rem 3;
+	        columns: 6.25rem 3;
+}
+
+.text-col-2 {
+	-webkit-columns: 9.38rem 2;
+	   -moz-columns: 9.38rem 2;
+	        columns: 9.38rem 2;
+}
+
+.text-col-lg-4-3-2-1 {
+	-webkit-columns: 15.63rem 4;
+	   -moz-columns: 15.63rem 4;
+	        columns: 15.63rem 4;
+}
+
+.text-col-md-4-3-2-1 {
+	-webkit-columns: 12.5rem 4;
+	   -moz-columns: 12.5rem 4;
+	        columns: 12.5rem 4;
+}
+
+.text-col-4-3-2 {
+	-webkit-columns: 9.38rem 4;
+	   -moz-columns: 9.38rem 4;
+	        columns: 9.38rem 4;
+}
+
+.text-col-lg-3-2-1 {
+	-webkit-columns: 15.63rem 3;
+	   -moz-columns: 15.63rem 3;
+	        columns: 15.63rem 3;
+}
+
+.text-col-md-3-2-1 {
+	-webkit-columns: 12.5rem 3;
+	   -moz-columns: 12.5rem 3;
+	        columns: 12.5rem 3;
+}
+
+.text-col-3-2 {
+	-webkit-columns: 9.38rem 3;
+	   -moz-columns: 9.38rem 3;
+	        columns: 9.38rem 3;
+}
+
+.text-col-lg-2-1 {
+	-webkit-columns: 15.63rem 2;
+	   -moz-columns: 15.63rem 2;
+	        columns: 15.63rem 2;
+}
+
+.text-col-md-2-1 {
+	-webkit-columns: 12.5rem 2;
+	   -moz-columns: 12.5rem 2;
+	        columns: 12.5rem 2;
+}
+
+/** SUPPORTING **/
+/**** column style ****/
+
+.text-col-line {
+	-webkit-column-rule: 2px solid #dedede;
+	   -moz-column-rule: 2px solid #dedede;
+	        column-rule: 2px solid #dedede;
+}
+
+.text-col-line-inverse {
+	-webkit-column-rule: 2px solid #101010;
+	   -moz-column-rule: 2px solid #101010;
+	        column-rule: 2px solid #101010;
+}
+
+.text-col-dotted {
+	-webkit-column-rule: 2px dotted #dedede;
+	   -moz-column-rule: 2px dotted #dedede;
+	        column-rule: 2px dotted #dedede;
+}
+
+.text-col-dotted-inverse {
+	-webkit-column-rule: 2px dotted #101010;
+	   -moz-column-rule: 2px dotted #101010;
+	        column-rule: 2px dotted #101010;
+}
+
+.text-col-lg-line {
+	-webkit-column-rule: 4px solid #dedede;
+	   -moz-column-rule: 4px solid #dedede;
+	        column-rule: 4px solid #dedede;
+}
+
+.text-col-lg-line-inverse {
+	-webkit-column-rule: 4px solid #101010;
+	   -moz-column-rule: 4px solid #101010;
+	        column-rule: 4px solid #101010;
+}
+
+.text-col-lg-dotted {
+	-webkit-column-rule: 4px dotted #dedede;
+	   -moz-column-rule: 4px dotted #dedede;
+	        column-rule: 4px dotted #dedede;
+}
+
+.text-col-lg-dotted-inverse {
+	-webkit-column-rule: 4px dotted #101010;
+	   -moz-column-rule: 4px dotted #101010;
+	        column-rule: 4px dotted #101010;
+}
+
+.text-col-xs-line {
+	-webkit-column-rule: 1px solid #dedede;
+	   -moz-column-rule: 1px solid #dedede;
+	        column-rule: 1px solid #dedede;
+}
+
+.text-col-xs-line-inverse {
+	-webkit-column-rule: 1px solid #101010;
+	   -moz-column-rule: 1px solid #101010;
+	        column-rule: 1px solid #101010;
+}
+
+.text-col-xs-dotted {
+	-webkit-column-rule: 1px dotted #dedede;
+	   -moz-column-rule: 1px dotted #dedede;
+	        column-rule: 1px dotted #dedede;
+}
+
+.text-col-xs-dotted-inverse {
+	-webkit-column-rule: 1px dotted #101010;
+	   -moz-column-rule: 1px dotted #101010;
+	        column-rule: 1px dotted #101010;
+}
+
+/** SUPPORTING **/
+/**** gaps between columns ****/
+.text-col-lg-gap {
+	-webkit-column-gap: 3rem;
+	   -moz-column-gap: 3rem;
+	        column-gap: 3rem;
+}
+
+.text-col-md-gap {
+	-webkit-column-gap: 2.5rem;
+	   -moz-column-gap: 2.5rem;
+	        column-gap: 2.5rem;
+}
+
+.text-col-sm-gap {
+	-webkit-column-gap: 2rem;
+	   -moz-column-gap: 2rem;
+	        column-gap: 2rem;
+}
+
+.text-col-xs-gap {
+	-webkit-column-gap: 1.5rem;
+	   -moz-column-gap: 1.5rem;
+	        column-gap: 1.5rem;
+}
+
+/** SUPPORTING **/
+/**** column spans for images and headlines ****/
+/**** these classes are put in child elements of container ****/
+
+.text-col-span-all {
+	-webkit-column-span: all;
+	   -moz-column-span: all;
+	        column-span: all;
+}
+
+.text-col-span-4 {
+	-webkit-column-span: 4;
+	   -moz-column-span: 4;
+	        column-span: 4;
+}
+
+.text-col-span-3 {
+	-webkit-column-span: 3;
+	   -moz-column-span: 3;
+	        column-span: 3;
+}
+
+.text-col-span-2 {
+	-webkit-column-span: 2;
+	   -moz-column-span: 2;
+	        column-span: 2;
+}
+
+
+/** for responsive images to be laid out in columns **/
+.text-col-img {
+	display: block;
+	margin: 1.5em 0;
+	max-width: 100%;
+}
+
+
+/*********** Media Query Breakpoints **************/
+
+/* Extra small devices (portrait phones, less than ???px)
+// No media query since this is the default in Bootstrap
+
+// Small devices (landscape phones, 34em and up)
+*/
+
+@media screen and (max-width: 34em) { 
+	/* displays flex items vertically */
+	.flex-container {
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		-webkit-flex-direction: column;
+		    -ms-flex-direction: column;
+		        flex-direction: column;
+	}	
+
+}
+
+/* Medium devices (tablets, 48em and up) */
+@media screen and  (max-width: 48em) {
+
+}
+
+/* Large devices (desktops, 62em and up) */
+@media screen and  (max-width: 62em) {
+
+}
+
+/* Extra large devices (large desktops, 75em and up) */
+@media screen and (max-width: 75em) {
+
+
+}

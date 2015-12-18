@@ -1,0 +1,357 @@
+/* my styles */
+
+html, body, .jumbotron {
+	min-height: 100%;
+	height: 100%;
+}
+
+/* 3D image */
+body {
+	background-color: #213451;
+	-webkit-perspective: 1800px;
+	        perspective: 1800px;
+}
+
+/* key is making the html height 100% */
+section.jumbotron {
+	background-size: cover;
+	height: 100%;
+	background-color: #213451;
+	background-image: url('../img/darkblue_background.png');
+	background-position: 50% 50%;
+	background-attachment: fixed;
+ 	-webkit-animation: fadein 0.75s; /* Safari and Chrome */
+        -moz-animation: fadein 0.75s; /* Firefox */
+        -ms-animation: fadein 0.75s; /* Internet Explorer */
+        -o-animation: fadein 0.75s; /* Opera */
+        animation: fadein 0.75s;
+}
+/* background fade */
+@keyframes fadein {
+    from { opacity: 0.3; }
+    to   { opacity: 1; }
+}
+
+/* Firefox */
+@-moz-keyframes fadein {
+    from { opacity: 0.3; }
+    to   { opacity: 1; }
+}
+
+/* Safari and Chrome */
+@-webkit-keyframes fadein {
+    from { opacity: 0.3; }
+    to   { opacity: 1; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+    from { opacity: 0.3; }
+    to   { opacity: 1; }
+}​
+
+/* Opera */
+@-o-keyframes fadein {
+    from { opacity: 0.3; }
+    to   { opacity: 1; }
+}​
+
+.bg-yellow {
+	background-color: #f0ad4e;
+}
+
+.bg-darkblue {
+	background: #213451;
+}
+
+/* lighter blue #213451
+/* darker blue #1c2e49
+*/
+
+.text-blue,
+.text-blue:active  {
+	color: #1c2e49;
+}
+
+.text-blue:hover, 
+.text-blue:focus {
+	color: #f0ad4e;
+}
+
+.card-darkblue {
+	background: #213451;
+	border-color: #1c2e49;
+}
+
+.btn-warning-outline:active {
+	color: #1c2e49;
+}
+
+.btn-blue-outline {
+	background: transparent;
+	color: #1c2e49;
+	border-color: #1c2e49;
+	-webkit-transition: background 1s, color 0.5s, border-color 1s;
+		transition: background 1s, color 0.5s, border-color 1s;
+}
+
+.btn-blue-outline:hover,
+.btn-blue-outline:focus {
+	background: #1c2e49;
+	color: white;
+	border-color: white;
+}
+
+.btn-blue-outline:active {
+	background: #213451;
+	color: lightgray;
+	border-color: #213451;
+}
+
+.btn-xp-blue,
+.btn-xp-blue:active {
+	background: #213451;
+	color: #f0ad4e;
+	-webkit-transition: background 1s, color 0.5s;
+		transition: background 1s, color 0.5s;
+}
+
+.btn-xp-blue:hover,
+.btn-xp-blue:focus,
+.btn-close-blue:hover,
+.btn-close-blue:focus {
+	background: #5C9CB8;
+	color: #213451;
+}
+
+.btn-close-blue,
+.btn-close-blue:active {
+	background: #f0ad4e;
+	color: #213451;
+	-webkit-transition: background 1s, color 0.5s;
+		transition: background 1s, color 0.5s;
+}
+
+.card-title-main {
+	border-bottom: 2px solid white;
+}
+
+/** navbar opacity **/
+.navbar {
+	background-color: rgba(78, 97, 125, 1);
+	color: rgba(240,173,78, 1);
+	-webkit-transition: background-color 2s;
+	transition: background-color 2s;
+}
+
+.navbar-open {
+	background-color: rgba(240,173,78, 1);
+	color: rgba(28,46,73, 1);	
+}
+
+/* reset button */
+
+#reset_button,
+#back_to_top {
+	background: transparent;
+	color: rgba(240,173,78, 1);
+	border: 1px solid rgba(240,173,78, 1);
+}
+
+#reset_button,
+#main_button,
+#back_to_top {
+	-webkit-transition: color 0.5s, background-color 1s, padding 1s, border-radius 1s;
+	transition: color 0.5s, background-color 1s, padding 1s, border-radius 1s;
+	transition-timing-function: cubic-bezier(.5,-.25,.25,1.25);
+}
+
+#reset_button:hover,
+#main_button:hover,
+#back_to_top:hover {
+	padding: .375rem 2em;
+	border-radius: 15px;
+}
+
+.modal_finished,
+#reset_button:hover,
+#back_to_top:hover {
+	background: rgba(78, 97, 125, 1);
+}
+
+
+#main_button:hover {
+	color: #213451;
+}
+
+#main_button:active, 
+#main_button:focus {
+	color: rgba(78, 97, 125, 1);
+}
+
+/*** cool animations ***/
+#bar_menu {
+	transition: 1s ease-in-out;
+}
+
+.navbar:hover #bar_menu {
+	-webkit-transform: scale(1.5) rotate(3turn);
+	    -ms-transform: scale(1.5) rotate(3turn);
+	        transform: scale(1.5) rotate(3turn);
+}
+
+/*** 3D hover effect ***/
+
+.flex-card-image {
+	transition: -webkit-transform .5s ease-in, box-shadow .5s ease-in;
+	-webkit-transform-style: preserve-3d;
+		-ms-transform-style: preserve-3d;
+			transform-style: preserve-3d;
+}
+
+.flex-card:hover .flex-card-image {
+	z-index: 100;
+	box-shadow: 5px 5px 15px 10px #eee;
+	-webkit-transform: rotate3d(0,1,0,360deg) translateZ(100px);
+		-ms-transform: rotate3d(0,1,0,360deg) translateZ(100px);
+			transform: rotate3d(0,1,0,360deg) translateZ(100px);
+}
+
+.flex-left {
+	overflow-wrap: break-word;
+}
+
+/****** star container *****/
+.star_container {
+	padding: 0 1.5em;
+	font-size: 0em;
+	float: right;
+	display: inline-block;
+	color: white;
+	text-align: center;
+	border-radius: 10px;
+	background: #5c9ccc;
+	-webkit-transition: font-size 1s, background 1s, color .5s;
+	transition: font-size 1s, background 1s, color .5s;
+}
+
+.star_container_grow {
+	font-size: 1.5em;
+}
+
+.star_container:hover {
+	background: #213451;
+	color: rgba(240,173,78, 1);
+} 
+
+.fa-star {
+	color: rgba(240,173,78, 1);
+}
+
+#lesson_choices {
+	background-image: url('../img/gold_background.jpg');
+}
+
+/* flex-card styling */
+#lesson_choices .lesson-card {
+	background-color: snow;
+	border-bottom: 1px solid #213451;
+	border-left: 1px solid rgba(240,173,78, 1);
+}
+
+/******* modals ******/
+
+.overlay {
+	position: absolute;
+	width: 100%;
+	min-height: 100%;
+	z-index: 99999;
+	background-color: rgba(78, 97, 125, 0.8);
+}
+
+.lessonModal_box {
+	background: white;
+	width: 60%;
+	margin: 5em auto;
+}
+
+.close_modal {
+	padding: 0.5rem;
+	border-radius: 5px;
+	position: relative;
+}
+
+.lessonModal_title {
+	margin: 0;
+	text-align: center;
+	padding: 0.5em;
+	background: #213451;
+	color: white;
+	border-bottom: 2px solid #f0ad4e;
+}
+
+.lessonModal_content {
+	font-size: 1.1rem;
+	line-height: 1.4;
+	color: #213451;
+	padding:2em 3em 1em;
+	overflow-wrap: break-word;
+}
+
+.answerChoice {
+	padding: 0.5em 0.2em 0.5em 2em;
+	margin-bottom: 0.1rem;
+	border-radius: 10px;
+	color: #213451;
+	background: #dfeffc;
+	transition: background 0.5s, color 0.5s;
+}
+
+.answerChoice:hover {
+	background: #213451;
+	color: white;
+}
+
+.answerChoice_correct {
+	background: #f0ad4e;
+	color: #213451;
+}
+
+.answerChoice_incorrect {
+	background: crimson;
+	color: white;
+}
+
+.fa-star-red {
+	color: crimson;
+}
+
+.quiz_button {
+	display: block;
+	width: 100%;
+}
+
+@media screen and (max-width: 34em) { 
+	/* displays flex items vertically */
+	.lessonModal_content {
+		padding: 0em 0em 1em;
+	}
+
+	.lessonModal_box  {
+		width: 90%;
+	}
+	.flex-card-image {
+		box-shadow: none;
+	}
+
+
+}
+
+/* Medium devices (tablets, 48em and up) */
+@media screen and  (max-width: 48em) {
+	.lessonModal_box {
+		width: 80%;
+	}
+}
+
+
